@@ -9,12 +9,12 @@ import Navbar from '../navbar/navbar';
 
 export default function Frontpage(props) {
     return (
-        <div>
+        <React.Fragment>
             <Navbar />
             {/* <About />
             <Adtabs />
             <Ads />
             <Footer /> */}
-        </div>
+        </React.Fragment>
     )
 }

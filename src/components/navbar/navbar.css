@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    list-style-type: none;
+    padding: 20px;
+    justify-content: center;
+}
+
+.navbar-item {
+    display: flex;
+    padding: 20px;
+    font-size: 26px;
+    
+}
+
+a {
+    text-decoration: none;
+    color: green;
+    font-weight: 600;
+}
+
+.logo, .logo-text-top, .logo-text-bottom  {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 22px;
+    color: green;
+    font-weight: 550;
+}
+
+.logo {
+    border: 4px solid green;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.search {
+    margin-top: 50px;
+    padding: 15px;
+    color: green;
+    border: 2px solid green;
+    border-radius: 8px;
+}
