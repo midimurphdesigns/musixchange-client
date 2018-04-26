@@ -1,14 +1,14 @@
 const baseUrl = 'http://localhost:8080/api';
 
 export const Fetch = (path, method = 'GET', data = undefined) => {
-  const token = AuthServices.getToken();
-  let headers;
+  // const token = AuthServices.getToken();
+  // let headers;
 
-  if (token) {
-    headers = {
-      authorization: `Bearer ${token}`
-    }
-  }
+  // if (token) {
+  //   headers = {
+  //     authorization: `Bearer ${token}`
+  //   }
+  // }
 
   return fetch(`${baseUrl}/${path}`, {
     method,
@@ -46,73 +46,73 @@ export const AdsServices = {
   }
 };
 
-const UserServices = {
+// const UserServices = {
 
-}
+// }
 
-const AuthServices = {
-  tokenName: '@facebook/token',
-  token: null,
+// const AuthServices = {
+//   tokenName: '@facebook/token',
+//   token: null,
 
-  getToken() {
-    if (this.token) {
-      return this.token;
-    }
-    this.token = localStorage.getItem(this.tokenName);
+//   getToken() {
+//     if (this.token) {
+//       return this.token;
+//     }
+//     this.token = localStorage.getItem(this.tokenName);
 
-    return this.token
-  },
+//     return this.token
+//   },
 
-  saveToken(token) {
-    this.token = token;
-    return localStorage.setItem(this.tokenName, token);
-  },
+//   saveToken(token) {
+//     this.token = token;
+//     return localStorage.setItem(this.tokenName, token);
+//   },
 
-  login(email, password) {
-    const path = 'login'
+//   login(email, password) {
+//     const path = 'login'
 
-    return Fetch(path, 'POST', { email, password }).then(res => {
-      if (res.token) {
-        this.saveToken(token)
-      }
+//     return Fetch(path, 'POST', { email, password }).then(res => {
+//       if (res.token) {
+//         this.saveToken(token)
+//       }
 
-      return res;
-    })
-  },
-}
+//       return res;
+//     })
+//   },
+// }
 
-class App extends Component {
-  state = { error: null, ads: [] }
+// class App extends Component {
+//   state = { error: null, ads: [] }
 
-  componentDidMount() {
-    this._fetchAds()
-  }
+//   componentDidMount() {
+//     this._fetchAds()
+//   }
 
-  _fetchAds = () => {
-    AdsServices.getAds().then(res => this.setState({ ads: res })).catch(error => this.setState({ error }))
-  }
-  render() {
-    if (this.state.error) {
-      return (
+//   _fetchAds = () => {
+//     AdsServices.getAds().then(res => this.setState({ ads: res })).catch(error => this.setState({ error }))
+//   }
+//   render() {
+//     if (this.state.error) {
+//       return (
         
-      );
-    }
-  }
+//       );
+//     }
+//   }
   
-  export default App;
+//   export default App;
 
 
 
 
 
 
-  export const signupUser = (userData) => (dispatch) => {
-    dispatch({ type: 'SIGNUP_REQUEST' });
+//   export const signupUser = (userData) => (dispatch) => {
+//     dispatch({ type: 'SIGNUP_REQUEST' });
 
-    AuthServices.signup(userData).then(res => {
-      dispatch({ type: 'SIGNUP_SUCCESS', data: res.user })
-    }).catch(error => ({
-      dispatch({ type: 'SIGNUP_ERROR', error })
-    }))
-  }
-}
+//     AuthServices.signup(userData).then(res => {
+//       dispatch({ type: 'SIGNUP_SUCCESS', data: res.user })
+//     }).catch(error => ({
+//       dispatch({ type: 'SIGNUP_ERROR', error })
+//     }))
+//   }
+// }

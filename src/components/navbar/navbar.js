@@ -1,24 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './navbar.css';
+import Frontpage from '../frontpage/frontpage';
+import Postpage from '../postpage/postpage';
+import Accountpage from '../accountpage/accountpage';
+import Loginpage from '../loginpage/loginpage';
+import Signuppage from '../signuppage/signuppage';
+
 
 export default function Navbar(props) {
     return (
-        <div className="navbar">
-            <div className="logo">
-                <label className="logo-text-top">Musixchange</label>
-                <label className="logo-text-bottom">Music and audio gear ads</label>
+            <div className="navbar">
+                <div className="logo">
+                    <label className="logo-text-top">Musixchange</label>
+                    <label className="logo-text-bottom">Music gear ads</label>
+                </div>
+                <menu className="navbar">
+                        <li className="navbar-item"><Link to="/">For Sale</Link></li>
+                        <li className="navbar-item"><Link to="/post">Post</Link></li>
+                        <li className="navbar-item"><Link to="/account">Account</Link></li>
+                        <li className="navbar-item"><Link to="/login">Login</Link></li>
+                        <li className="navbar-item"><Link to="/signup">Signup</Link></li>
+                </menu>
+                <form className="search">
+                    <input placeholder="search" className="search" />
+                </form>
             </div>
-            <menu className="navbar">
-                <li className="navbar-item"><a href="/">For Sale</a></li>
-                <li className="navbar-item"><a href="/">Post</a></li>
-                <li className="navbar-item"><a href="/">Account</a></li>
-                <li className="navbar-item"><a href="/">Login</a></li>
-                <li className="navbar-item"><a href="/">Signup</a></li>
-            </menu>
-            <form className="search">
-                <input placeholder="search" className="search" />
-            </form>
-        </div>
-
     )
 }
