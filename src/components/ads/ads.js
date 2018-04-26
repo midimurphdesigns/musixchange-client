@@ -56,10 +56,10 @@ export default class Ads extends React.Component {
                     className="price"
                   >{element.price}</label>
                 </div>
-              </div>
-
-              <div className="seller-details">
-                <label>seller details go here</label>
+                <div className="seller-details">
+                  <label>seller details go here</label>
+                  <button type="button">Ping the Seller</button>
+                </div>
               </div>
 
             </div>
