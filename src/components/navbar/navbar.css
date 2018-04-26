@@ -5,17 +5,15 @@
 .navbar {
     display: flex;
     list-style-type: none;
-    margin-top: 3%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: auto;
     justify-content: center;
+    width: 75%;
 }
 
 .navbar-item {
     display: flex;
     padding: 20px;
     font-size: 26px;
-    
 }
 
 a {
@@ -24,25 +22,30 @@ a {
     font-weight: 600;
 }
 
-.logo, .logo-text-top, .logo-text-bottom  {
+.logo, .logo-text-top {
     display: block;
     text-align: center;
-    padding: 10px;
-    font-size: 22px;
-    /* color: green; */
-    font-weight: 550;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.logo-text-bottom {
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .logo {
-    border: 4px solid black;
+    border: 3px solid black;
     border-radius: 8px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .search {
     margin-top: 50px;
     padding: 15px;
-    /* color: green; */
-    border: 2px solid black;
+    border: 3px solid black;
     border-radius: 8px;
 }

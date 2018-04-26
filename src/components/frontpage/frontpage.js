@@ -17,6 +17,8 @@ export default function Frontpage(props) {
         <React.Fragment>
             <Navbar />
             <div className="mainSection">
+                <Route exact path="/" component={About} />
+                <Route exact path="/" component={Adtabs} />
                 <Route exact path="/" component={Ads} />
                 <Route exact path="/post" component={Postpage} />
                 <Route exact path="/account" component={Accountpage} />

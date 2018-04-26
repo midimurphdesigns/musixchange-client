@@ -7,8 +7,15 @@
     flex-direction: column;
     font-size: 20px;
     margin-left: 40px;
-    border: 1px solid blue;
-    margin-bottom: 25px;
-    margin-top: 25px;
-    color: blue;
+    border: 3px solid purple;
+    padding: 20px;
+}
+
+.about-label {
+    margin-bottom: 20px;
+}
+
+.about-info {
+    border: 1px dashed purple;
+    padding: 5px;
 }

@@ -23,7 +23,7 @@ export default function Navbar(props) {
                         <li className="navbar-item"><Link to="/login">Login</Link></li>
                         <li className="navbar-item"><Link to="/signup">Signup</Link></li>
                 </menu>
-                <form className="search">
+                <form className="search-container">
                     <input placeholder="search" className="search" />
                 </form>
             </div>
