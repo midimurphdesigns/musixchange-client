@@ -8,8 +8,7 @@ import Footer from '../footer/footer';
 export default function Postpage(props) {
     return (
         <div>
-            postpage stuff goes here
-            {/* <PostForm /> */}
+            <PostForm />
         </div>
     )
 }
