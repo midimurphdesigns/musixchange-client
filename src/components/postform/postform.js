@@ -24,13 +24,9 @@ const formData = {
 
 export class Postform extends React.Component {
 
-  componentDidMount() {
-    this.props.dispatch(extractPostForm(formData))
-  }
-
   _handleSubmit = (values, bag) => {
     console.log("values", values);
-
+    this.props.dispatch(extractPostForm(values))
     setTimeout(() => {
       bag.setSubmitting(false);
 
