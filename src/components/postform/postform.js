@@ -2,15 +2,31 @@ import React from "react";
 import { render } from "react-dom";
 import { Formik } from "formik";
 import Yup from "yup";
+import { connect } from 'react-redux'
 
 import './postform.css';
+import { extractPostForm } from '../../actions/adActions' 
 
 const errorMsg = {
   password: "Invalid password",
   username: "Invalid username"
 };
 
-export default class SignupForm extends React.Component {
+const formData = {
+  condition: "asdfasdfasdfasdf",
+  description: "asdfasdfasdfasdf",
+  image: "asdfasdfasdfasdf",
+  instrumentName: "asdfasdfasdfasdf",
+  instrumentType: "asdfasdfasdfasdf",
+  price: "asdfasdfasdfasdf",
+  title: "asdfasdfasdfasdf"
+}
+
+export class Postform extends React.Component {
+
+  componentDidMount() {
+    this.props.dispatch(extractPostForm(formData))
+  }
 
   _handleSubmit = (values, bag) => {
     console.log("values", values);
@@ -81,7 +97,7 @@ export default class SignupForm extends React.Component {
                     placeholder="Image URL"
                     onBlur={handleBlur}
                   />
-                  {errors.image && touched.image && <div>{errors.image}</div>}
+                  {errors.image && touched.image && <div className="error-messages">{errors.image}</div>}
                   <input
                     className="single-input"
                     onChange={handleChange}
@@ -93,7 +109,7 @@ export default class SignupForm extends React.Component {
                     onBlur={handleBlur}
                   />
                   {errors.title &&
-                    touched.title && <div>{errors.title}</div>}
+                    touched.title && <div className="error-messages">{errors.title}</div>}
                   <input
                     className="single-input"
                     onChange={handleChange}
@@ -105,7 +121,7 @@ export default class SignupForm extends React.Component {
                     error={errors.description && touched.description}
                   />
                   {errors.description &&
-                    touched.description && <div>{errors.description}</div>}
+                    touched.description && <div className="error-messages">{errors.description}</div>}
                   <input
                     className="single-input"
                     onChange={handleChange}
@@ -117,7 +133,7 @@ export default class SignupForm extends React.Component {
                     error={errors.instrumentType && touched.instrumentType}
                   />
                   {errors.instrumentType &&
-                    touched.instrumentType && <div>{errors.instrumentType}</div>}
+                    touched.instrumentType && <div className="error-messages">{errors.instrumentType}</div>}
                   <input
                     className="single-input"
                     onChange={handleChange}
@@ -129,7 +145,7 @@ export default class SignupForm extends React.Component {
                     error={errors.instrumentName && touched.instrumentName}
                   />
                   {errors.instrumentName &&
-                    touched.instrumentName && <div>{errors.instrumentName}</div>}
+                    touched.instrumentName && <div className="error-messages">{errors.instrumentName}</div>}
                   <input
                     className="single-input"
                     onChange={handleChange}
@@ -141,7 +157,7 @@ export default class SignupForm extends React.Component {
                     error={errors.condition && touched.condition}
                   />
                   {errors.condition &&
-                    touched.condition && <div>{errors.condition}</div>}
+                    touched.condition && <div className="error-messages">{errors.condition}</div>}
                   <input
                     className="single-input"
                     onChange={handleChange}
@@ -153,7 +169,7 @@ export default class SignupForm extends React.Component {
                     error={errors.price && touched.price}
                   />
                   {errors.price &&
-                    touched.price && <div>{errors.price}</div>}
+                    touched.price && <div className="error-messages">{errors.price}</div>}
                   <button
                     className="single-input"
                     disabled={!isValid}
@@ -167,3 +183,5 @@ export default class SignupForm extends React.Component {
     );
   }
 }
+
+export default connect()(Postform) 

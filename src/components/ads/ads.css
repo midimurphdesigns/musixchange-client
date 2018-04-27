@@ -2,27 +2,41 @@
     box-sizing: border-box;
 }
 
+.about-container {
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.adtabs-container {
+    margin: auto;
+}
+
 .ads-container {
     display: flex;
     flex-direction: column;
     font-size: 20px;
-    margin-left: 40px;
+    margin: auto;
     border: 3px solid green;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     padding: 20px;
 }
 
 .ad-image {
-    width: 250px;
-    height: 250px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
     border: 3px solid black;
+    border-radius: 8px;
 }
 
 .instrument-details {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-radius: 8px;
 }
 
 .instrument-about {
@@ -30,8 +44,10 @@
     flex-direction: column;
     padding: 20px;
     border: 3px solid black;
-    margin-left: 20px;
+    margin: auto;
+    width: 55%;
     font-size: 30px;
+    border-radius: 8px;
 }
 
 .seller-details {
@@ -39,6 +55,8 @@
     flex-direction: column;
     border: 3px solid black;
     padding: 20px;
-    margin-left: 20px;
+    margin: auto;
+    width: 20%;
     font-size: 30px;
+    border-radius: 8px;
 }

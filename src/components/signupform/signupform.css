@@ -18,7 +18,7 @@ h1 {
   margin: auto;
 }
 
-.single-input, .error-messages {
+.single-input {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -27,4 +27,8 @@ h1 {
   padding: 20px;
   border-radius: 8px;
   border: 1px solid black;
+}
+
+.error-messages {
+  text-align: center;
 }

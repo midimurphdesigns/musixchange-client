@@ -71,7 +71,7 @@ export default class SignupForm extends React.Component {
                     placeholder="Email here..."
                     onBlur={handleBlur}
                   />
-                  {errors.email && touched.email && <div>{errors.email}</div>}
+                  {errors.email && touched.email && <div className="error-messages">{errors.email}</div>}
                   <input
                     className="single-input"
                     onChange={handleChange}
@@ -83,7 +83,7 @@ export default class SignupForm extends React.Component {
                     onBlur={handleBlur}
                   />
                   {errors.username &&
-                    touched.username && <div>{errors.username}</div>}
+                    touched.username && <div className="error-messages">{errors.username}</div>}
                   <input
                     className="single-input"
                     onChange={handleChange}
@@ -95,7 +95,7 @@ export default class SignupForm extends React.Component {
                     error={errors.password && touched.password}
                   />
                   {errors.password &&
-                    touched.password && <div>{errors.password}</div>}
+                    touched.password && <div className="error-messages">{errors.password}</div>}
                   <input
                     className="single-input"
                     onChange={handleChange}
@@ -107,7 +107,7 @@ export default class SignupForm extends React.Component {
                     error={errors.confirmPassword && touched.confirmPassword}
                   />
                   {errors.confirmPassword &&
-                    touched.confirmPassword && <div>{errors.confirmPassword}</div>}
+                    touched.confirmPassword && <div className="error-messages">{errors.confirmPassword}</div>}
                   <button
                     className="single-input"
                     disabled={!isValid}

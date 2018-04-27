@@ -1,0 +1,27 @@
+.info-container {
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.username {
+  font-size: 30px;
+}
+
+.current-ads {
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 2%;
+  width: 75%;
+}
+
+.ping-notifications {
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 2%;
+  width: 75%;
+}

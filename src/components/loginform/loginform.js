@@ -29,24 +29,16 @@ export default class SignupForm extends React.Component {
 
         <Formik
           validationSchema={Yup.object().shape({
-            // email: Yup.string()
-            //   .email()
-            //   .required("Dont forget to enter a valid email"),
             username: Yup.string()
               .min(3)
               .required("Don't forget to enter a valid username"),
             password: Yup.string()
               .min(6)
               .required("Don't forget to enter a valid password"),
-            // confirmPassword: Yup.string()
-            //   .oneOf([Yup.ref("password"), null])
-            //   .required("Don't forget to confirm your password")
           })}
           initialValues={{
-            // email: "",
             username: "",
-            password: "",
-            // confirmPassword: ""
+            password: ""
           }}
           onSubmit={this._handleSubmit}
           render={({
@@ -60,17 +52,6 @@ export default class SignupForm extends React.Component {
           }) => (
               <div className="input-container">
                 <form onSubmit={handleSubmit}>
-                  {/* <input
-                    className="single-input"
-                    onChange={handleChange}
-                    fluid
-                    error={errors.email && touched.email}
-                    name="email"
-                    label="Email"
-                    placeholder="Email here..."
-                    onBlur={handleBlur}
-                  />
-                  {errors.email && touched.email && <div>{errors.email}</div>} */}
                   <input
                     className="single-input"
                     onChange={handleChange}
@@ -82,7 +63,7 @@ export default class SignupForm extends React.Component {
                     onBlur={handleBlur}
                   />
                   {errors.username &&
-                    touched.username && <div>{errors.username}</div>}
+                    touched.username && <div className="error-messages">{errors.username}</div>}
                   <input
                     className="single-input"
                     onChange={handleChange}
@@ -94,19 +75,7 @@ export default class SignupForm extends React.Component {
                     error={errors.password && touched.password}
                   />
                   {errors.password &&
-                    touched.password && <div>{errors.password}</div>}
-                  {/* <input
-                    className="single-input"
-                    onChange={handleChange}
-                    fluid
-                    name="confirmPassword"
-                    label="Confirm Password"
-                    placeholder="Confirm Password"
-                    onBlur={handleBlur}
-                    error={errors.confirmPassword && touched.confirmPassword}
-                  />
-                  {errors.confirmPassword &&
-                    touched.confirmPassword && <div>{errors.confirmPassword}</div>} */}
+                    touched.password && <div className="error-messages">{errors.password}</div>}
                   <button
                     className="single-input"
                     disabled={!isValid}
