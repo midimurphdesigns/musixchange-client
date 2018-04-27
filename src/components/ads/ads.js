@@ -61,9 +61,7 @@ export default class Ads extends React.Component {
                   <button type="button">Ping the Seller</button>
                 </div>
               </div>
-
             </div>
-
           )
         })}
       </div>
