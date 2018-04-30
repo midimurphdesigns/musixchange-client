@@ -3,6 +3,7 @@ import { Formik } from "formik";
 import Yup from "yup";
 
 import './loginform.css';
+import { login } from '../../actions/auth';
 
 const errorMsg = {
   password: "Invalid password",
@@ -10,8 +11,14 @@ const errorMsg = {
 };
 
 export default class SignupForm extends React.Component {
+
+  onSubmit(values) {
+    return this.props.dispatch(login(values.username, values.password));
+  }
+
   _handleSubmit = (values, bag) => {
-    console.log("values", values);
+
+    this.onSubmit(values);
 
     setTimeout(() => {
       bag.setSubmitting(false);
@@ -21,6 +28,7 @@ export default class SignupForm extends React.Component {
       });
     }, 2000);
   };
+
   render() {
     return (
       <div className="form-container">

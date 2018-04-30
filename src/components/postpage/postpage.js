@@ -2,16 +2,34 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import './postpage.css';
+import {fetchProtectedData} from '../../actions/protected-data';
 import Navbar from '../navbar/navbar';
 import Postform from '../postform/postform';
 import Footer from '../footer/footer';
+import requiresLogin from '../../requires-login';
 
-function Postpage(props) {
-    return (
-        <div>
-            <Postform />
-        </div>
-    )
+export class Postpage extends React.Component {
+    componentDidCatch() {
+        this.props.dispatch(fetchProtectedData());
+    }
+
+    render() {
+        return (
+            <div>
+                <Postform />
+            </div>
+        );
+    }
 }
 
-export default connect()(Postpage) 
+const mapStateToProps = state => {
+    const { currentUser } = state.auth;
+    return {
+        username: state.auth.currentUser.username,
+        email: `${currentUser.email}`,
+        protectedData: state.protectedData.data
+    };
+};
+
+export default requiresLogin()(connect(mapStateToProps)(Postpage));
+// export default connect()(Postpage) 

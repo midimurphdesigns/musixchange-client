@@ -4,11 +4,27 @@
 
 .adtabs-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     font-size: 20px;
     margin-left: 40px;
-    border: 3px solid gold;
     margin-bottom: 25px;
     margin-top: 25px;
-    padding: 20px;
+    width: 100%;
+    margin: auto;
+}
+
+.adtabs {
+    border-top: 4px solid goldenrod;
+    border-right: 4px solid goldenrod;
+    border-radius: 12px;
+    padding: 10px 20px;
+}
+
+.adtabs-first-tab {
+    padding: 10px 20px;
+    border-top: 4px solid goldenrod;
+    border-right: 4px solid goldenrod;
+    border-left: 4px solid goldenrod;
+    border-radius: 12px;
+    padding: 10px;
 }

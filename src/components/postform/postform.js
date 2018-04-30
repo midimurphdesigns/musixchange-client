@@ -12,21 +12,22 @@ const errorMsg = {
   username: "Invalid username"
 };
 
-const formData = {
-  condition: "asdfasdfasdfasdf",
-  description: "asdfasdfasdfasdf",
-  image: "asdfasdfasdfasdf",
-  instrumentName: "asdfasdfasdfasdf",
-  instrumentType: "asdfasdfasdfasdf",
-  price: "asdfasdfasdfasdf",
-  title: "asdfasdfasdfasdf"
-}
+// const formData = {
+//   condition: "asdfasdfasdfasdf",
+//   description: "asdfasdfasdfasdf",
+//   image: "asdfasdfasdfasdf",
+//   instrumentName: "asdfasdfasdfasdf",
+//   instrumentType: "asdfasdfasdfasdf",
+//   price: "asdfasdfasdfasdf",
+//   title: "asdfasdfasdfasdf"
+// }
 
 export class Postform extends React.Component {
 
   _handleSubmit = (values, bag) => {
-    console.log("values", values);
-    this.props.dispatch(extractPostForm(values))
+
+    this.props.dispatch(extractPostForm(values));
+    
     setTimeout(() => {
       bag.setSubmitting(false);
 

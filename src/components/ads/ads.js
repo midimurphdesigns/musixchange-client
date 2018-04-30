@@ -20,7 +20,7 @@ export default class Ads extends React.Component {
     return (
       <div className="section-container">
         {this.state.ads.map((element, index) => {
-          console.log(element)
+          // console.log(element)
           return (
             <div className="ads-container" key={String(index)}>
 

@@ -1,18 +1,31 @@
 import React from 'react';
-import './signupform.css';
 import { Formik } from "formik";
 import Yup from "yup";
+import { connect} from 'react-redux';
 
 import './signupform.css';
+import { registerUser } from '../../actions/users';
+import { login } from '../../actions/auth';
 
 const errorMsg = {
   password: "Invalid password",
   username: "Invalid username"
 };
 
-export default class SignupForm extends React.Component {
+export class SignupForm extends React.Component {
+
+  onSubmit(values) {
+    const { username, password, email } = values;
+    const user = { username, password, email };
+    console.log(this.props)
+    return this.props
+      .dispatch(registerUser(user))
+      .then(() => this.props.dispatch(login(username, password)));
+  }
+
   _handleSubmit = (values, bag) => {
-    console.log("values", values);
+
+    this.onSubmit(values);
 
     setTimeout(() => {
       bag.setSubmitting(false);
@@ -121,3 +134,5 @@ export default class SignupForm extends React.Component {
     );
   }
 }
+
+export default connect()(SignupForm);
