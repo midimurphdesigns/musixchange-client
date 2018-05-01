@@ -16,14 +16,14 @@ import Footer from '../footer/footer';
 
 export class Frontpage extends React.Component {
 
-    componentDidMount() {
-        setTimeout(() => {
-            this.props.dispatch(clearAuth());
-        }, 15000)
-        setTimeout(() => {
-            this.props.dispatch(authWarning());
-        }, 10000)
-    }
+    // componentDidMount() {
+    //     setTimeout(() => {
+    //         this.props.dispatch(clearAuth());
+    //     }, 15000)
+    //     setTimeout(() => {
+    //         this.props.dispatch(authWarning());
+    //     }, 10000)
+    // }
 
     componentDidUpdate(prevProps) {
         if (!prevProps.loggedIn && this.props.loggedIn) {
