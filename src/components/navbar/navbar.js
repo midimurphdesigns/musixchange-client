@@ -34,15 +34,19 @@ export class Navbar extends React.Component {
                 </div>
                 <menu className="navbar">
                     <li className="navbar-item"><Link to="/">For Sale</Link></li>
+                    <label className="navbar-item">|</label>
                     <li className="navbar-item"><Link to="/post">Post</Link></li>
+                    <label className="navbar-item">|</label>
                     <li className="navbar-item"><Link to="/account">Account</Link></li>
+                    <label className="navbar-item">|</label>
                     <li className="navbar-item"><Link to="/signup">Signup</Link></li>
+                    <label className="navbar-item">|</label>
                     <li className="navbar-item"><Link to="/login">Login</Link></li>
                     {logOutButton}
                 </menu>
-                <form className="search-container">
+                {/* <form className="search-container">
                     <input placeholder="search" className="search" />
-                </form>
+                </form> */}
             </div>
         );
     }

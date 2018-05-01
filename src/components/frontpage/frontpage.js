@@ -10,7 +10,7 @@ import Loginpage from '../loginpage/loginpage';
 import Signuppage from '../signuppage/signuppage';
 import Navbar from '../navbar/navbar';
 // import About from '../about/about';
-import Adtabs from '../adtabs/adtabs';
+// import Adtabs from '../adtabs/adtabs';
 import Ads from '../ads/ads';
 import Footer from '../footer/footer';
 
@@ -64,7 +64,7 @@ export class Frontpage extends React.Component {
                 <Navbar />
                 <div className="mainSection">
                     {/* <Route exact path="/" component={About} /> */}
-                    <Route exact path="/" component={Adtabs} />
+                    {/* <Route exact path="/" component={Adtabs} /> */}
                     <Route exact path="/" component={Ads} />
                     <Route exact path="/post" component={Postpage} />
                     <Route exact path="/account" component={Accountpage} />
@@ -87,24 +87,3 @@ const mapStateToProps = state => ({
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
 export default withRouter(connect(mapStateToProps)(Frontpage));
 
-
-
-
-
-// export default function Frontpage(props) {
-//     return (
-//         <React.Fragment>
-//             <Navbar />
-//             <div className="mainSection">
-//                 {/* <Route exact path="/" component={About} /> */}
-//                 <Route exact path="/" component={Adtabs} />
-//                 <Route exact path="/" component={Ads} />
-//                 <Route exact path="/post" component={Postpage} />
-//                 <Route exact path="/account" component={Accountpage} />
-//                 <Route exact path="/login" component={Loginpage} />
-//                 <Route exact path="/signup" component={Signuppage} />
-//                 <Footer />
-//             </div>
-//         </React.Fragment>
-//     )
-// }

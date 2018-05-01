@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik } from "formik";
 import Yup from "yup";
+import { connect } from 'react-redux'
 
 import './loginform.css';
 import { login } from '../../actions/auth';
@@ -10,7 +11,7 @@ const errorMsg = {
   username: "Invalid username"
 };
 
-export default class SignupForm extends React.Component {
+export class Loginform extends React.Component {
 
   onSubmit(values) {
     return this.props.dispatch(login(values.username, values.password));
@@ -97,3 +98,5 @@ export default class SignupForm extends React.Component {
     );
   }
 }
+
+export default connect()(Loginform) 
