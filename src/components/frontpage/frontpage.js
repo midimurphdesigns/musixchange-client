@@ -25,32 +25,32 @@ export class Frontpage extends React.Component {
     //     }, 10000)
     // }
 
-    componentDidUpdate(prevProps) {
-        if (!prevProps.loggedIn && this.props.loggedIn) {
-            this.startPeriodicRefresh();
-        } else if (prevProps.loggedIn && !this.props.loggedIn) {
-            this.stopPeriodicRefresh();
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     if (!prevProps.loggedIn && this.props.loggedIn) {
+    //         this.startPeriodicRefresh();
+    //     } else if (prevProps.loggedIn && !this.props.loggedIn) {
+    //         this.stopPeriodicRefresh();
+    //     }
+    // }
 
-    componentWillUnmount() {
-        this.stopPeriodicRefresh();
-    }
+    // componentWillUnmount() {
+    //     this.stopPeriodicRefresh();
+    // }
 
-    startPeriodicRefresh() {
-        this.refreshInterval = setInterval(
-            () => this.props.dispatch(refreshAuthToken()),
-            60 * 10 * 1000 // 10 minutes
-        );
-    }
+    // startPeriodicRefresh() {
+    //     this.refreshInterval = setInterval(
+    //         () => this.props.dispatch(refreshAuthToken()),
+    //         60 * 10 * 1000 // 10 minutes
+    //     );
+    // }
 
-    stopPeriodicRefresh() {
-        if (!this.refreshInterval) {
-            return;
-        }
+    // stopPeriodicRefresh() {
+    //     if (!this.refreshInterval) {
+    //         return;
+    //     }
 
-        clearInterval(this.refreshInterval);
-    }
+    //     clearInterval(this.refreshInterval);
+    // }
 
     warning() {
         if (this.props.warning) {

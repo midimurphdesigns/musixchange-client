@@ -7,7 +7,7 @@ import { adReducer } from './reducers/adReducer';
 import protectedDataReducer from './reducers/protected-data';
 import authReducer from './reducers/auth';
 import { loadAuthToken } from './local-storage';
-import { setAuthToken, refreshAuthToken } from './actions/auth';
+// import { setAuthToken, refreshAuthToken } from './actions/auth';
 
 const store = createStore(combineReducers({
   form: formReducer,
@@ -20,11 +20,11 @@ const store = createStore(combineReducers({
   ));
 
 // Hydrate the authToken from locaStorage if it exists
-const authToken = loadAuthToken();
-if (authToken) {
-  const token = authToken;
-  store.dispatch(setAuthToken(token));
-  store.dispatch(refreshAuthToken());
-}
+// const authToken = loadAuthToken();
+// if (authToken) {
+//   const token = authToken;
+//   store.dispatch(setAuthToken(token));
+//   store.dispatch(refreshAuthToken());
+// }
 
 export default store;
