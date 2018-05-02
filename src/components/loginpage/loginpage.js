@@ -6,20 +6,15 @@ import './loginpage.css';
 import LoginForm from '../loginform/loginform';
 
 export function LoginPage(props) {
+  if (props.loggedIn) {
+    return <Redirect to="/" />;
+  }
 
-    if (props.loggedIn) {
-        return <Redirect to="/" />;
-    }
-
-    return (
-        <div>
-            <LoginForm />
-        </div>
-    )
+  return <LoginForm dispatch={props.dispatch} />;
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
 });
 
 export default connect(mapStateToProps)(LoginPage);
