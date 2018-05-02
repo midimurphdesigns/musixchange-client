@@ -2,17 +2,6 @@ export const EXTRACT_POST_FORM_REQUEST = 'EXTRACT_POST_FORM_REQUEST';
 export const EXTRACT_POST_FORM_SUCCESS = 'EXTRACT_POST_FORM_SUCCESS';
 export const EXTRACT_POST_FORM_ERROR = 'EXTRACT_POST_FORM_ERROR';
 
-
-const formData = {
-    condition: "asdfasdfasdfasdf",
-    description: "asdfasdfasdfasdf",
-    image: "asdfasdfasdfasdf",
-    instrumentName: "asdfasdfasdfasdf",
-    instrumentType: "asdfasdfasdfasdf",
-    price: "asdfasdfasdfasdf",
-    title: "asdfasdfasdfasdf"
-}
-
 export const extractPostForm = (formData) => dispatch => {
     dispatch(extractPostFormRequest());
     return fetch('http://localhost:8080/api/ads', {

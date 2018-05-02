@@ -17,7 +17,6 @@ export default class Ads extends React.Component {
   }
 
   render() {
-    console.log('this.state ----->', this.state)
     return (
       <div className="section-container">
         {this.state.ads.map((element, index) => {
@@ -28,7 +27,7 @@ export default class Ads extends React.Component {
               <div className="instrument-details">
                 <img
                   src={element.image}
-                  alt="picture of instrument for sale"
+                  alt="instrument for sale"
                   className="ad-image"
                 />
 
@@ -58,9 +57,11 @@ export default class Ads extends React.Component {
                   >{element.price}</label>
                 </div>
                 <div className="seller-details">
-                  <label>{element.author.username}</label>
-                  <label>{element.author.email}</label>
-                  <button type="button">Ping the Seller</button>
+                  <label className="username">Username:</label>
+                  <label className="user-info">{element.author.username}</label>
+                  <label className="user-email">Email:</label>
+                  <label className="user-info">{element.author.email}</label>
+                  <button className="ping-seller-button blue push_button" type="button">Ping the Seller</button>
                 </div>
               </div>
             </div>

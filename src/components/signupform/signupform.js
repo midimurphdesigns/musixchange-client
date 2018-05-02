@@ -122,7 +122,7 @@ export class SignupForm extends React.Component {
                   {errors.confirmPassword &&
                     touched.confirmPassword && <div className="error-messages">{errors.confirmPassword}</div>}
                   <button
-                    className="single-input"
+                    className="single-input blue"
                     disabled={!isValid}
                     loading={isSubmitting}
                   >Submit</button>

@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 
 import './postpage.css';
 import {fetchProtectedData} from '../../actions/protected-data';
-import Navbar from '../navbar/navbar';
 import Postform from '../postform/postform';
-import Footer from '../footer/footer';
 import requiresLogin from '../../requires-login';
 
 export class Postpage extends React.Component {

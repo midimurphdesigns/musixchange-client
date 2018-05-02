@@ -22,8 +22,6 @@ export const Fetch = (path, method = 'GET', data = undefined) => {
     }
   }
 
-  console.log('token and header ----->', token, headers)
-
   return fetch(`${baseUrl}/${path}`, {
     method,
     body: JSON.stringify(data),

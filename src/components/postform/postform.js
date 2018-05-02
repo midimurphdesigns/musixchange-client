@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
 import { Formik } from "formik";
 import Yup from "yup";
 import { connect } from 'react-redux'
@@ -168,7 +167,7 @@ export class Postform extends React.Component {
                   {errors.price &&
                     touched.price && <div className="error-messages">{errors.price}</div>}
                   <button
-                    className="single-input"
+                    className="single-input blue"
                     disabled={!isValid}
                     loading={isSubmitting}
                   >Submit</button>

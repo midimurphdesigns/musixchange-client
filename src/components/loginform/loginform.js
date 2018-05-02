@@ -86,7 +86,7 @@ export class Loginform extends React.Component {
                   {errors.password &&
                     touched.password && <div className="error-messages">{errors.password}</div>}
                   <button
-                    className="single-input"
+                    className="single-input blue"
                     disabled={!isValid}
                     loading={isSubmitting}
                   >Submit</button>
