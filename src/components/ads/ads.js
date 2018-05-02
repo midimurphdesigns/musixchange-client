@@ -13,7 +13,11 @@ export default class Ads extends React.Component {
   }
 
   fetchAds = () => {
-    AdsServices.getAds().then(res => this.setState({ ads: res }))
+    AdsServices.getAds().then(res => this.setState({ ads: res })).catch(err => {
+      console.log('====================================');
+      console.log('error', err);
+      console.log('====================================');
+    })
   }
 
   render() {

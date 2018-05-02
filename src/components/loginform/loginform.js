@@ -1,39 +1,40 @@
 import React from 'react';
-import { Formik } from "formik";
-import Yup from "yup";
-import { connect } from 'react-redux'
+import { Formik } from 'formik';
+import Yup from 'yup';
+import { connect } from 'react-redux';
 
 import './loginform.css';
-import { login } from '../../actions/auth';
+import { storeAuthInfo } from '../../actions/auth';
+import { AuthServices } from '../../services/api';
 
 const errorMsg = {
-  password: "Invalid password",
-  username: "Invalid username"
+  password: 'Invalid password',
+  username: 'Invalid username',
 };
 
 export class Loginform extends React.Component {
-
-  onSubmit(values) {
-    return this.props.dispatch(login(values.username, values.password));
-  }
+  state = {
+    error: false,
+  };
 
   _handleSubmit = (values, bag) => {
-
-    this.onSubmit(values);
-
-    setTimeout(() => {
-      bag.setSubmitting(false);
-
-      Object.keys(errorMsg).forEach(key => {
-        bag.setFieldError(key, errorMsg[key]);
+    AuthServices.login(values)
+      .then(res => {
+        bag.setSubmitting(false);
+        this.props.dispatch(storeAuthInfo(res.authToken));
+      })
+      .catch(err => {
+        bag.setSubmitting(false);
+        this.setState({ error: true });
       });
-    }, 2000);
   };
 
   render() {
+    if (this.state.error) {
+      return <h1>Something went wrong</h1>;
+    }
     return (
       <div className="form-container">
-
         <h1>Login</h1>
 
         <Formik
@@ -46,8 +47,8 @@ export class Loginform extends React.Component {
               .required("Don't forget to enter a valid password"),
           })}
           initialValues={{
-            username: "",
-            password: ""
+            username: '',
+            password: '',
           }}
           onSubmit={this._handleSubmit}
           render={({
@@ -57,46 +58,51 @@ export class Loginform extends React.Component {
             errors,
             touched,
             handleBlur,
-            isValid
+            isValid,
           }) => (
-              <div className="input-container">
-                <form onSubmit={handleSubmit}>
-                  <input
-                    className="single-input"
-                    onChange={handleChange}
-                    fluid
-                    error={errors.username && touched.username}
-                    name="username"
-                    label="Username"
-                    placeholder="Username here..."
-                    onBlur={handleBlur}
-                  />
-                  {errors.username &&
-                    touched.username && <div className="error-messages">{errors.username}</div>}
-                  <input
-                    className="single-input"
-                    onChange={handleChange}
-                    fluid
-                    name="password"
-                    label="Password"
-                    placeholder="Password here"
-                    onBlur={handleBlur}
-                    error={errors.password && touched.password}
-                  />
-                  {errors.password &&
-                    touched.password && <div className="error-messages">{errors.password}</div>}
-                  <button
-                    className="single-input blue"
-                    disabled={!isValid}
-                    loading={isSubmitting}
-                  >Submit</button>
-                </form>
-              </div>
-            )}
+            <div className="input-container">
+              <form onSubmit={handleSubmit}>
+                <input
+                  className="single-input"
+                  onChange={handleChange}
+                  // error={errors.username && touched.username}
+                  name="username"
+                  label="Username"
+                  placeholder="Username here..."
+                  onBlur={handleBlur}
+                />
+                {errors.username &&
+                  touched.username && (
+                    <div className="error-messages">{errors.username}</div>
+                  )}
+                <input
+                  className="single-input"
+                  onChange={handleChange}
+                  type="password"
+                  name="password"
+                  label="Password"
+                  placeholder="Password here"
+                  onBlur={handleBlur}
+                  // error={errors.password && touched.password}
+                />
+                {errors.password &&
+                  touched.password && (
+                    <div className="error-messages">{errors.password}</div>
+                  )}
+                <button
+                  className="single-input blue"
+                  disabled={!isValid}
+                  // loading={isSubmitting}
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          )}
         />
       </div>
     );
   }
 }
 
-export default connect()(Loginform) 
+export default Loginform;
