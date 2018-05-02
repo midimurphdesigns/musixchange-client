@@ -1,9 +1,10 @@
 * {
-  font-family: "Century Gothic", sans-serif;
+
 }
 
 body {
+  font-family: 'Lato', sans-serif;
+  /* text-shadow: 2px 2px 2px #aaa; */
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }

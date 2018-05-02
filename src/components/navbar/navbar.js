@@ -23,24 +23,24 @@ export class Navbar extends React.Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
+                <button className="button" onClick={() => this.logOut()}>Log out</button>
             );
         }
         return (
             <div className="navbar">
                 <div className="logo">
                     <label className="logo-text-top">Musixchange</label>
-                    <label className="logo-text-bottom">Music gear ads</label>
+                    <label className="logo-text-bottom">buy & sell music gear</label>
                 </div>
                 <menu className="navbar">
                     <li className="navbar-item"><Link to="/">For Sale</Link></li>
-                    <label className="navbar-item">|</label>
+                    {/* <label className="navbar-line">|</label> */}
                     <li className="navbar-item"><Link to="/post">Post</Link></li>
-                    <label className="navbar-item">|</label>
+                    {/* <label className="navbar-line">|</label> */}
                     <li className="navbar-item"><Link to="/account">Account</Link></li>
-                    <label className="navbar-item">|</label>
+                    {/* <label className="navbar-line">|</label> */}
                     <li className="navbar-item"><Link to="/signup">Signup</Link></li>
-                    <label className="navbar-item">|</label>
+                    {/* <label className="navbar-line">|</label> */}
                     <li className="navbar-item"><Link to="/login">Login</Link></li>
                     {logOutButton}
                 </menu>

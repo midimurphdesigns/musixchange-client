@@ -8,45 +8,68 @@
     margin: auto;
     justify-content: center;
     width: 75%;
-    margin-top: 40px;
+    padding-top: 40px;
 }
 
-.navbar-item {
+.navbar-item, .navbar-line {
     display: flex;
     padding: 20px;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 a {
     text-decoration: none;
     color: black;
     font-weight: 600;
+    background-color: whitesmoke;
+    border: 3px solid #0CB9AF;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.navbar-item:hover {
+    display: flex;
+    padding: 20px;
+    text-shadow: 4px 4px 4px #aaa;
+    font-weight: 900px;
 }
 
 .logo, .logo-text-top {
     display: block;
     text-align: center;
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 60px;
+    font-weight: 900;
+    text-shadow: 4px 4px 4px #aaa;
 }
 
 .logo-text-bottom {
     display: block;
     text-align: center;
     padding-top: 10px;
-    font-size: 24px;
+    font-size: 34px;
     font-weight: 700;
 }
 
 .logo {
-    border: 3px solid black;
+    border: 3px solid #0CB9AF;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+.button {
+    color: black;
+    font-weight: 600;
+    background-color: whitesmoke;
+    border: 3px solid #0CB9AF;
     border-radius: 8px;
     padding: 20px;
 }
 
 .search {
+    display: flex;
     margin-top: 50px;
     padding: 15px;
-    border: 3px solid black;
+    border: 3px solid #0CB9AF;
     border-radius: 8px;
 }

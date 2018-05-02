@@ -1,18 +1,33 @@
+import { loadAuthToken } from '../local-storage'
+
 const baseUrl = 'http://localhost:8080/api';
+let token;
+
+const getToken = () => {
+  if (token != null) {
+    return token;
+  }
+  token = loadAuthToken();
+  return token;
+}
 
 export const Fetch = (path, method = 'GET', data = undefined) => {
-  // const token = AuthServices.getToken();
-  // let headers;
 
-  // if (token) {
-  //   headers = {
-  //     authorization: `Bearer ${token}`
-  //   }
-  // }
+  getToken();
+
+  let headers;
+  if (token) {
+    headers = {
+      authorization: `Bearer ${token}`
+    }
+  }
+
+  console.log('token and header ----->', token, headers)
 
   return fetch(`${baseUrl}/${path}`, {
     method,
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
+    headers
   }).then(res => {
     if (res.status >= 400) {
       throw new Error(res.statusText);
@@ -27,6 +42,10 @@ export const AdsServices = {
 
   getAds() {
     return Fetch(this.basePath);
+  },
+
+  getMyAds() {
+    return Fetch(this.basePath + '/me');
   },
 
   createAds(name) {
@@ -94,11 +113,11 @@ export const AdsServices = {
 //   render() {
 //     if (this.state.error) {
 //       return (
-        
+
 //       );
 //     }
 //   }
-  
+
 //   export default App;
 
 

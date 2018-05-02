@@ -17,6 +17,7 @@ export default class Ads extends React.Component {
   }
 
   render() {
+    console.log('this.state ----->', this.state)
     return (
       <div className="section-container">
         {this.state.ads.map((element, index) => {
@@ -37,7 +38,7 @@ export default class Ads extends React.Component {
                   >{element.title}</label>
 
                   <label
-                    className="ainstrument-type"
+                    className="instrument-type"
                   >{element.instrumentType}</label>
 
                   <label
@@ -57,7 +58,8 @@ export default class Ads extends React.Component {
                   >{element.price}</label>
                 </div>
                 <div className="seller-details">
-                  <label>seller details go here</label>
+                  <label>{element.author.username}</label>
+                  <label>{element.author.email}</label>
                   <button type="button">Ping the Seller</button>
                 </div>
               </div>
