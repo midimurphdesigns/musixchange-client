@@ -69,8 +69,8 @@ export const AdsServices = {
     return Fetch(`${this.basePath}/${id}`);
   },
 
-  updateAd(id, name) {
-    return Fetch(`${this.basePath}/${id}`, 'PUT', { name });
+  updateAd(id, data) {
+    return Fetch(`${this.basePath}/${id}`, 'PATCH', data);
   },
 };
 
