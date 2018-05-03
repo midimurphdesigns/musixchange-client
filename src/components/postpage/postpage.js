@@ -2,21 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import './postpage.css';
-import {fetchProtectedData} from '../../actions/protected-data';
+import { fetchProtectedData } from '../../actions/protected-data';
 import Postform from '../postform/postform';
 import requiresLogin from '../../requires-login';
 
 export class Postpage extends React.Component {
-    componentDidCatch() {
-        this.props.dispatch(fetchProtectedData());
+
+    redirectToFrontpage = () => {
+        this.props.history.push('/')
     }
 
     render() {
-        return (
-            <div>
-                <Postform />
-            </div>
-        );
+        return (<Postform redirect={this.redirectToFrontpage} />);
     }
 }
 

@@ -3,7 +3,7 @@
 }
 
 .nav {
-    border-bottom: 3px solid #1f271b;
+    border-bottom: 3px solid #061826;
     text-align: right;
     height: 70px;
     line-height: 70px;
@@ -17,7 +17,7 @@
 .menu a {
     clear: right;
     text-decoration: none;
-    color: #19647e;
+    color: #061826;
     margin: 0 10px;
     line-height: 70px;
     font-size: 22px;
@@ -32,18 +32,20 @@
 .logo-container, .logo-text-top {
     display: flex;
     float: left;
-    font-size: 24px;
+    font-size: 28px;
     margin-left: 20px;
     font-weight: 700;
     text-shadow: 4px 4px 4px #aaa;
-    color: #19647e;
+    color: #061826;
 }
 
-.button {
-    color: #19647e;
+.logout {
+    /* color: #19647e; */
+    color: white;
     padding: 5px;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .hamburger {
@@ -71,10 +73,11 @@
         display: none;
     }
 
-    .menu a, {
+    .menu a {
         display: block;
-        border-bottom: 1px solid #0CB9AF;
+        border-bottom: 1px solid #061826;
         margin: 0;
+        z-index: 100;
     }
 
     #toggle:checked + .menu {

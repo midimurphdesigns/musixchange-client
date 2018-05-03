@@ -21,16 +21,32 @@ export class UserInfo extends React.Component {
             .catch(error => console.log(error));
     };
 
+    handleDelete = (id) => {
+        if (window.confirm('Are you sure?')) {
+            AdsServices.deleteAd(id).then(() => {
+                this.setState({
+                    myAds: this.state.myAds.filter(el => el.id !== id)
+                })
+            })
+        }
+    }
+
     render() {
         return (
             <div className="info-container">
-                <label className="username">Username Goes Here</label>
+                <h1 className="username">Username Goes Here</h1>
                 <section className="current-ads">
-                    {JSON.stringify(this.state)}
+                    {this.state.myAds.map(el => (
+                        <div key={el.id}>
+                        <p>{el.title}</p>
+                            <button>Edit</button>
+                            <button onClick={() => this.handleDelete(el.id)}>Delete</button>
+                        </div>
+                    ))}
                 </section>
                 <section className="ping-notifications">Ping notifications go here</section>
             </div>
-        );
+        )
     }
 }
 

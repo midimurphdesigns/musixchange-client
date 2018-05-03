@@ -1,16 +1,10 @@
 import React from 'react';
 import { Formik } from 'formik';
 import Yup from 'yup';
-import { connect } from 'react-redux';
 
 import './loginform.css';
 import { storeAuthInfo } from '../../actions/auth';
 import { AuthServices } from '../../services/api';
-
-const errorMsg = {
-  password: 'Invalid password',
-  username: 'Invalid username',
-};
 
 export class Loginform extends React.Component {
   state = {
@@ -35,7 +29,6 @@ export class Loginform extends React.Component {
     }
     return (
       <div className="form-container">
-        <h1>Login</h1>
 
         <Formik
           validationSchema={Yup.object().shape({
@@ -60,45 +53,46 @@ export class Loginform extends React.Component {
             handleBlur,
             isValid,
           }) => (
-            <div className="input-container">
-              <form onSubmit={handleSubmit}>
-                <input
-                  className="single-input"
-                  onChange={handleChange}
-                  // error={errors.username && touched.username}
-                  name="username"
-                  label="Username"
-                  placeholder="Username here..."
-                  onBlur={handleBlur}
-                />
-                {errors.username &&
-                  touched.username && (
-                    <div className="error-messages">{errors.username}</div>
-                  )}
-                <input
-                  className="single-input"
-                  onChange={handleChange}
-                  type="password"
-                  name="password"
-                  label="Password"
-                  placeholder="Password here"
-                  onBlur={handleBlur}
+              <div className="input-container">
+                <h1>Login</h1>
+                <form onSubmit={handleSubmit}>
+                  <input
+                    className="single-input"
+                    onChange={handleChange}
+                    // error={errors.username && touched.username}
+                    name="username"
+                    label="Username"
+                    placeholder="Username here..."
+                    onBlur={handleBlur}
+                  />
+                  {errors.username &&
+                    touched.username && (
+                      <div className="error-messages">{errors.username}</div>
+                    )}
+                  <input
+                    className="single-input"
+                    onChange={handleChange}
+                    type="password"
+                    name="password"
+                    label="Password"
+                    placeholder="Password here"
+                    onBlur={handleBlur}
                   // error={errors.password && touched.password}
-                />
-                {errors.password &&
-                  touched.password && (
-                    <div className="error-messages">{errors.password}</div>
-                  )}
-                <button
-                  className="single-input blue"
-                  disabled={!isValid}
+                  />
+                  {errors.password &&
+                    touched.password && (
+                      <div className="error-messages">{errors.password}</div>
+                    )}
+                  <button
+                    className="submit blue push_button"
+                    disabled={!isValid}
                   // loading={isSubmitting}
-                >
-                  Submit
+                  >
+                    Submit
                 </button>
-              </form>
-            </div>
-          )}
+                </form>
+              </div>
+            )}
         />
       </div>
     );

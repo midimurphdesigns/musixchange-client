@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 
 import './frontpage.css';
-import { refreshAuthToken, clearAuth, authWarning } from '../../actions/auth';
 import Postpage from '../postpage/postpage';
 import Accountpage from '../accountpage/accountpage';
 import Loginpage from '../loginpage/loginpage';

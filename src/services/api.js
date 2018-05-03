@@ -1,6 +1,5 @@
 import { loadAuthToken } from '../local-storage';
 import { API_BASE_URL } from '../config';
-import axios from 'axios';
 
 let token;
 
@@ -25,10 +24,6 @@ export const Fetch = (path, method = 'GET', data = undefined) => {
     };
   }
 
-  console.log('====================================');
-  console.log('heaers', headers);
-  console.log('====================================');
-
   return fetch(`${API_BASE_URL}/${path}`, {
     method,
     body: JSON.stringify(data),
@@ -37,8 +32,9 @@ export const Fetch = (path, method = 'GET', data = undefined) => {
     if (res.status >= 400) {
       throw new Error(res.statusText);
     }
-
-    return res.json();
+    if (method !== 'DELETE') {
+      return res.json();
+    }
   });
 };
 
@@ -61,12 +57,12 @@ export const AdsServices = {
     return Fetch(`${this.basePath}/me`);
   },
 
-  createAds(name) {
-    return Fetch(this.basePath, 'POST', { name });
+  createAds(data) {
+    return Fetch(this.basePath, 'POST', data);
   },
 
   deleteAd(id) {
-    return Fetch(`${this.basePath}/${id}`);
+    return Fetch(`${this.basePath}/${id}`, 'DELETE');
   },
 
   getAd(id) {

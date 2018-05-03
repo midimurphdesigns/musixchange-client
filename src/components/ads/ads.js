@@ -31,7 +31,7 @@ export default class Ads extends React.Component {
                 <img
                   src={element.image}
                   alt="instrument for sale"
-                  className=" col-4"
+                  className="ad-image col-4"
                 />
 
                 <div className="instrument-about col-4">

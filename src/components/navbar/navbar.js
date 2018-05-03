@@ -17,7 +17,7 @@ export class Navbar extends React.Component {
     let logOutButton;
     if (this.props.loggedIn) {
       logOutButton = (
-        <button className="button" onClick={() => this.logOut()}>
+        <button className="logout blue" onClick={() => this.logOut()}>
           Log out
         </button>
       );
@@ -28,15 +28,19 @@ export class Navbar extends React.Component {
           <label className="logo-text-top">Musixchange</label>
         </div>
 
-        <label className="hamburger" for="toggle">&#9776;</label>
+        <label htmlFor="toggle" className="hamburger">&#9776;</label>
         <input type="checkbox" id="toggle" />
 
-        <div class="menu">
+        <div className="menu">
           <Link to="/">For Sale</Link>
           <Link to="/post">Post</Link>
+          {!this.props.loggedIn && (
+            <React.Fragment>
+              <Link to="/signup">Signup</Link>
+              <Link to="/login">Login</Link>
+            </React.Fragment>
+          )}
           <Link to="/account">Account</Link>
-          <Link to="/signup">Signup</Link>
-          <Link to="/login">Login</Link>
           {logOutButton}
         </div>
       </div>

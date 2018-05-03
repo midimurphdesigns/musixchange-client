@@ -1,17 +1,13 @@
 .info-container {
   background-color: whitesmoke;
-  border: 3px solid #0CB9AF;
+  border: 3px solid #061826;
   border-radius: 8px;
   padding: 20px;
 }
 
-.username {
-  font-size: 30px;
-}
-
 .current-ads {
   background-color: whitesmoke;
-  border: 3px solid #0CB9AF;
+  border: 3px solid #061826;
   border-radius: 8px;
   padding: 20px;
   margin: auto;
@@ -21,7 +17,7 @@
 
 .ping-notifications {
   background-color: whitesmoke;
-  border: 3px solid #0CB9AF;
+  border: 3px solid #061826;
   border-radius: 8px;
   padding: 20px;
   margin: auto;

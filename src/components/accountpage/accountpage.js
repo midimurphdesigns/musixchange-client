@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from '../../requires-login';
-import { fetchProtectedData } from '../../actions/protected-data';
 
 import './accountpage.css';
 import UserInfo from '../userinfo/userinfo';
@@ -26,7 +25,6 @@ export class AccountPage extends React.Component {
   render() {
     return (
       <div>
-        {/* {JSON.stringify(this.state)} */}
         <UserInfo />
       </div>
     );
