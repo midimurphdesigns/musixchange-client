@@ -16,6 +16,10 @@ export class AccountPage extends React.Component {
     this.fetchAds();
   }
 
+  _goToEdit = id => {
+    this.props.history.push(`/ads/${id}/edit`);
+  };
+
   fetchAds = () => {
     AdsServices.getMyAds()
       .then(res => this.setState({ myAds: res }))
@@ -23,11 +27,7 @@ export class AccountPage extends React.Component {
   };
 
   render() {
-    return (
-      <div>
-        <UserInfo />
-      </div>
-    );
+    return <UserInfo goToEdit={this._goToEdit} />;
   }
 }
 

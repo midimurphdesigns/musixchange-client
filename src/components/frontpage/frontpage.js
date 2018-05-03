@@ -4,6 +4,7 @@ import { Route, withRouter } from 'react-router-dom';
 
 import './frontpage.css';
 import Postpage from '../postpage/postpage';
+import EditPage from '../editPage/EditPage';
 import Accountpage from '../accountpage/accountpage';
 import Loginpage from '../loginpage/loginpage';
 import Signuppage from '../signuppage/signuppage';
@@ -69,6 +70,7 @@ export class Frontpage extends React.Component {
             <Route exact path="/account" component={Accountpage} />
             <Route exact path="/login" component={Loginpage} />
             <Route exact path="/signup" component={Signuppage} />
+            <Route exact path="/ads/:id/edit" component={EditPage} />
             <Footer />
           </div>
         </div>
