@@ -20,57 +20,56 @@
     margin-bottom: 20px;
     padding: 20px;
     background-color: whitesmoke;
-    /* opacity: .95; */
+    z-index: -100;
 }
 
+
+
 .ad-image {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    height: 100%;
+    display: block;
 }
 
 .instrument-details {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: block;
 }
 
 .instrument-about {
-    display: flex;
-    flex-direction: column;
+    display: block;
     padding: 20px;
-    border-left: 3px solid #0CB9AF;
     margin: auto;
-    width: 55%;
-    font-size: 30px;
+    font-size: 20px;
+}
+
+.instrument-label {
+    display: block;
+
 }
 
 .seller-details {
-    display: flex;
-    flex-direction: column;
-    border-left: 3px solid #0CB9AF;
+    display: block;
     padding: 20px;
     margin: auto;
-    width: 23%;
-    font-size: 30px;
+    font-size: 16px;
 }
 
 .user-info {
-    font-size: 22px;
+    display: block;
+    font-size: 16px;
     padding: 15px;
-    width: 100%;
     margin: auto;
 }
 
 .username, .user-email {
-    font-size: 22px;
+    font-size: 18px;
     padding-left: 10px;
     font-weight: 700;
 }
 
 .ping-seller-button {
-    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 16px;
 }
 
 

@@ -23,36 +23,22 @@ export class Navbar extends React.Component {
       );
     }
     return (
-      <div className="navbar">
-        <div className="logo">
+      <div className="nav">
+        <div className="logo-container">
           <label className="logo-text-top">Musixchange</label>
-          <label className="logo-text-bottom">buy & sell music gear</label>
         </div>
-        <menu className="navbar">
-          <li className="navbar-item">
-            <Link to="/">For Sale</Link>
-          </li>
-          {/* <label className="navbar-line">|</label> */}
-          <li className="navbar-item">
-            <Link to="/post">Post</Link>
-          </li>
-          {/* <label className="navbar-line">|</label> */}
-          <li className="navbar-item">
-            <Link to="/account">Account</Link>
-          </li>
-          {/* <label className="navbar-line">|</label> */}
-          <li className="navbar-item">
-            <Link to="/signup">Signup</Link>
-          </li>
-          {/* <label className="navbar-line">|</label> */}
-          <li className="navbar-item">
-            <Link to="/login">Login</Link>
-          </li>
+
+        <label className="hamburger" for="toggle">&#9776;</label>
+        <input type="checkbox" id="toggle" />
+
+        <div class="menu">
+          <Link to="/">For Sale</Link>
+          <Link to="/post">Post</Link>
+          <Link to="/account">Account</Link>
+          <Link to="/signup">Signup</Link>
+          <Link to="/login">Login</Link>
           {logOutButton}
-        </menu>
-        {/* <form className="search-container">
-                    <input placeholder="search" className="search" />
-                </form> */}
+        </div>
       </div>
     );
   }

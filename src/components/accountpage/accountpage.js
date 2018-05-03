@@ -26,7 +26,7 @@ export class AccountPage extends React.Component {
   render() {
     return (
       <div>
-        {JSON.stringify(this.state)}
+        {/* {JSON.stringify(this.state)} */}
         <UserInfo />
       </div>
     );

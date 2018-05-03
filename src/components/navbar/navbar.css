@@ -2,74 +2,85 @@
     box-sizing: border-box;
 }
 
-.navbar {
-    display: flex;
-    list-style-type: none;
-    margin: auto;
-    justify-content: center;
-    width: 75%;
-    padding-top: 40px;
-}
-
-.navbar-item, .navbar-line {
-    display: flex;
-    padding: 20px;
-    font-size: 20px;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
+.nav {
+    border-bottom: 3px solid #1f271b;
+    text-align: right;
+    height: 70px;
+    line-height: 70px;
     background-color: whitesmoke;
-    border: 3px solid #0CB9AF;
-    border-radius: 8px;
-    padding: 20px;
 }
 
-.navbar-item:hover {
-    display: flex;
-    padding: 20px;
+.menu {
+    margin: 0 30px 0 0;
+}
+
+.menu a {
+    clear: right;
+    text-decoration: none;
+    color: #19647e;
+    margin: 0 10px;
+    line-height: 70px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.menu a:hover {
     text-shadow: 4px 4px 4px #aaa;
     font-weight: 900px;
 }
 
-.logo, .logo-text-top {
-    display: block;
-    text-align: center;
-    font-size: 60px;
-    font-weight: 900;
-    text-shadow: 4px 4px 4px #aaa;
-}
-
-.logo-text-bottom {
-    display: block;
-    text-align: center;
-    padding-top: 10px;
-    font-size: 34px;
+.logo-container, .logo-text-top {
+    display: flex;
+    float: left;
+    font-size: 24px;
+    margin-left: 20px;
     font-weight: 700;
-}
-
-.logo {
-    border: 3px solid #0CB9AF;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: whitesmoke;
+    text-shadow: 4px 4px 4px #aaa;
+    color: #19647e;
 }
 
 .button {
-    color: black;
-    font-weight: 600;
-    background-color: whitesmoke;
-    border: 3px solid #0CB9AF;
+    color: #19647e;
+    padding: 5px;
     border-radius: 8px;
-    padding: 20px;
+    cursor: pointer;
 }
 
-.search {
-    display: flex;
-    margin-top: 50px;
-    padding: 15px;
-    border: 3px solid #0CB9AF;
-    border-radius: 8px;
+.hamburger {
+    margin: 0 40px 0 0;
+    font-size: 26px;
+    line-height: 70px;
+    display: none;
+    width: 26px;
+    float: right;
+}
+
+#toggle {
+    display: none;
+}
+
+@media only screen and (max-width: 850px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu {
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+
+    .menu a, {
+        display: block;
+        border-bottom: 1px solid #0CB9AF;
+        margin: 0;
+    }
+
+    #toggle:checked + .menu {
+        display: flex;
+        flex-direction: column;
+        background-color: purple;
+
+    }
 }

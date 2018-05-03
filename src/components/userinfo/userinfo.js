@@ -1,12 +1,46 @@
 import React from 'react';
-import './userinfo.css';
+import { connect } from 'react-redux';
+import requiresLogin from '../../requires-login';
 
-export default function UserInfo(props) {
-    return (
-        <div className="info-container">
-            <label className="username">Username Goes Here</label>
-            <section className="current-ads">Current ads go here</section>
-            <section className="ping-notifications">Ping notifications go here</section>
-        </div>
-    )
+import './userinfo.css';
+import { AdsServices } from '../../services/api';
+
+export class UserInfo extends React.Component {
+    state = {
+        myAds: [],
+    };
+
+    componentDidMount() {
+        // this.props.dispatch(fetchProtectedData());
+        this.fetchAds();
+    }
+
+    fetchAds = () => {
+        AdsServices.getMyAds()
+            .then(res => this.setState({ myAds: res }))
+            .catch(error => console.log(error));
+    };
+
+    render() {
+        return (
+            <div className="info-container">
+                <label className="username">Username Goes Here</label>
+                <section className="current-ads">
+                    {JSON.stringify(this.state)}
+                </section>
+                <section className="ping-notifications">Ping notifications go here</section>
+            </div>
+        );
+    }
 }
+
+const mapStateToProps = state => {
+    const { currentUser } = state.auth;
+    return {
+        username: state.auth.currentUser.username,
+        email: `${currentUser.email}`,
+        protectedData: state.protectedData.data,
+    };
+};
+
+export default requiresLogin()(connect(mapStateToProps)(UserInfo));
