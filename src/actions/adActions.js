@@ -7,7 +7,7 @@ export const extractPostForm = (formData) => dispatch => {
     return fetch('http://localhost:8080/api/ads', {
         method: "POST",
         headers: {
-            'content-type': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
     })

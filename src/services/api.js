@@ -1,5 +1,6 @@
 import { loadAuthToken } from '../local-storage';
 import { API_BASE_URL } from '../config';
+import axios from 'axios';
 
 let token;
 
@@ -20,7 +21,7 @@ export const Fetch = (path, method = 'GET', data = undefined) => {
   if (token) {
     headers = {
       ...headers,
-      authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     };
   }
 
@@ -57,7 +58,7 @@ export const AdsServices = {
   },
 
   getMyAds() {
-    return Fetch(`${this.basePath}/users/ads`);
+    return Fetch(`${this.basePath}/me`);
   },
 
   createAds(name) {
