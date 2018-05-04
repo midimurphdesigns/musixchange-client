@@ -2,10 +2,10 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import Ads from './ads';
+import Posts from './posts';
 
-describe('<Ads />', () => {
+describe('<Posts />', () => {
     it('Renders without crashing', () => {
-        shallow(<Ads />);
+        shallow(<Posts />);
     });
 });

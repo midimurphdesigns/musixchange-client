@@ -51,30 +51,30 @@ export const AuthServices = {
 
 };
 
-export const AdsServices = {
-  basePath: 'ads',
+export const PostsServices = {
+  basePath: 'posts',
 
-  getAds() {
+  getPosts() {
     return Fetch(this.basePath);
   },
 
-  getMyAds() {
+  getMyPosts() {
     return Fetch(`${this.basePath}/me`);
   },
 
-  createAds(data) {
+  createPosts(data) {
     return Fetch(this.basePath, 'POST', data);
   },
 
-  deleteAd(id) {
+  deletePost(id) {
     return Fetch(`${this.basePath}/${id}`, 'DELETE');
   },
 
-  getAd(id) {
+  getPost(id) {
     return Fetch(`${this.basePath}/${id}`);
   },
 
-  updateAd(id, data) {
+  updatePost(id, data) {
     return Fetch(`${this.basePath}/${id}`, 'PATCH', data);
   },
 };

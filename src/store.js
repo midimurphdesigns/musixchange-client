@@ -4,7 +4,7 @@ import { reducer as formReducer } from 'redux-form';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger';
 
-import { adReducer } from './reducers/adReducer';
+import { postReducer } from './reducers/postReducer';
 import protectedDataReducer from './reducers/protected-data';
 import authReducer from './reducers/auth';
 import { loadAuthToken } from './local-storage';
@@ -15,7 +15,7 @@ const store = createStore(
   combineReducers({
     form: formReducer,
     auth: authReducer,
-    ad: adReducer,
+    post: postReducer,
     protectedData: protectedDataReducer,
   }),
   composeWithDevTools(

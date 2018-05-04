@@ -1,14 +1,12 @@
-import { EXTRACT_POST_FORM_REQUEST, EXTRACT_POST_FORM_SUCCESS, EXTRACT_POST_FORM_ERROR } from "../actions/adActions";
-
-// import { TOGGLE_LOADING } from '../actions/adActions'
+import { EXTRACT_POST_FORM_REQUEST, EXTRACT_POST_FORM_SUCCESS, EXTRACT_POST_FORM_ERROR } from "../actions/postActions";
 
 const initialState = {
     loading: false,
     error: null,
-    ads: []
+    posts: []
 }
 
-export function adReducer(state = initialState, action) {
+export function postReducer(state = initialState, action) {
     if (action.type === EXTRACT_POST_FORM_REQUEST) {
         return {
             ...state,
@@ -19,7 +17,7 @@ export function adReducer(state = initialState, action) {
             ...state,
             loading: false,
             error: null,
-            ads: action.data
+            posts: action.data
 
         }
     } else if (action.type === EXTRACT_POST_FORM_ERROR) {

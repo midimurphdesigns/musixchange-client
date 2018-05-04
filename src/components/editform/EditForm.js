@@ -4,8 +4,8 @@ import Yup from 'yup';
 import { connect } from 'react-redux';
 
 import './EditForm.css';
-import { extractPostForm } from '../../actions/adActions';
-import { AdsServices } from '../../services/api';
+import { extractPostForm } from '../../actions/postActions';
+import { PostsServices } from '../../services/api';
 
 const errorMsg = {
   password: 'Invalid password',
@@ -14,23 +14,23 @@ const errorMsg = {
 
 export class EditForm extends React.Component {
   _handleSubmit = (values, bag) => {
-    AdsServices.updateAd(this.props.ad.id, values).then(() => {
+    PostsServices.updatePost(this.props.post.id, values).then(() => {
       this.props.redirect();
     });
   };
 
   render() {
-    const { ad } = this.props;
+    const { post } = this.props;
     return (
       <div className="form-container">
-        {ad && (
+        {post && (
           <Formik
             validationSchema={Yup.object().shape({
               image: Yup.string()
                 .required('Dont forget a link to an image of your gear'),
               title: Yup.string()
                 .min(10)
-                .required("Don't forget to enter a title for your ad"),
+                .required("Don't forget to enter a title for your post"),
               description: Yup.string()
                 .min(15)
                 .required("Don't forget to enter a description of your gear"),
@@ -42,11 +42,11 @@ export class EditForm extends React.Component {
               ),
             })}
             initialValues={{
-              image: ad.image,
-              title: ad.title,
-              description: ad.description,
-              condition: ad.condition,
-              price: ad.price,
+              image: post.image,
+              title: post.title,
+              description: post.description,
+              condition: post.condition,
+              price: post.price,
             }}
             onSubmit={this._handleSubmit}
             render={({
@@ -60,7 +60,7 @@ export class EditForm extends React.Component {
               values,
             }) => (
                 <div className="input-container">
-                  <h1>Edit your ad</h1>
+                  <h1>Edit your post</h1>
                   <form onSubmit={handleSubmit}>
                     <p className="input-label">Image URL:</p>
                     <input
@@ -76,14 +76,14 @@ export class EditForm extends React.Component {
                       touched.image && (
                         <div className="error-messages">{errors.image}</div>
                       )}
-                    <p className="input-label">Title for ad:</p>
+                    <p className="input-label">Title for post:</p>
                     <input
                       className="single-input"
                       onChange={handleChange}
                       value={values.title}
                       name="title"
                       label="title"
-                      placeholder="Title for ad"
+                      placeholder="Title for post"
                       onBlur={handleBlur}
                     />
                     {errors.title &&

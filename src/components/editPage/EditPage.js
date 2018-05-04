@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 
-import { AdsServices } from '../../services/api';
+import { PostsServices } from '../../services/api';
 import EditForm from '../editform/EditForm';
 
 class EditPage extends PureComponent {
-  state = { ad: null, loading: false };
+  state = { post: null, loading: false };
 
   componentDidMount() {
     this._fetchInfo();
@@ -18,14 +18,14 @@ class EditPage extends PureComponent {
     this.setState({ loading: true });
     const { id } = this.props.match.params;
 
-    AdsServices.getAd(id).then(ad => this.setState({ ad, loading: false }));
+    PostsServices.getPost(id).then(post => this.setState({ post, loading: false }));
   };
 
   render() {
     if (this.state.loading) {
       return <h1>Loading</h1>;
     }
-    return <EditForm redirect={this.redirectToFrontpage} ad={this.state.ad} />;
+    return <EditForm redirect={this.redirectToFrontpage} post={this.state.post} />;
   }
 }
 

@@ -4,8 +4,8 @@ import Yup from 'yup';
 import { connect } from 'react-redux';
 
 import './postform.css';
-import { extractPostForm } from '../../actions/adActions';
-import { AdsServices } from '../../services/api'
+import { extractPostForm } from '../../actions/postActions';
+import { PostsServices } from '../../services/api'
 
 const errorMsg = {
   password: 'Invalid password',
@@ -14,7 +14,7 @@ const errorMsg = {
 
 export class Postform extends React.Component {
   _handleSubmit = (values, bag) => {
-  AdsServices.createAds(values).then(() => {
+  PostsServices.createPosts(values).then(() => {
       this.props.redirect()
     })
   };

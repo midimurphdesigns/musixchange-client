@@ -4,25 +4,25 @@ import requiresLogin from '../../requires-login';
 
 import './accountpage.css';
 import UserInfo from '../userinfo/userinfo';
-import { AdsServices } from '../../services/api';
+import { PostsServices } from '../../services/api';
 
 export class AccountPage extends React.Component {
   state = {
-    myAds: [],
+    myPosts: [],
   };
 
   componentDidMount() {
     // this.props.dispatch(fetchProtectedData());
-    this.fetchAds();
+    this.fetchPosts();
   }
 
   _goToEdit = id => {
-    this.props.history.push(`/ads/${id}/edit`);
+    this.props.history.push(`/posts/${id}/edit`);
   };
 
-  fetchAds = () => {
-    AdsServices.getMyAds()
-      .then(res => this.setState({ myAds: res }))
+  fetchPosts = () => {
+    PostsServices.getMyPosts()
+      .then(res => this.setState({ myPosts: res }))
       .catch(error => console.log(error));
   };
 

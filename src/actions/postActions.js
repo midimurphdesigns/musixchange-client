@@ -4,7 +4,7 @@ export const EXTRACT_POST_FORM_ERROR = 'EXTRACT_POST_FORM_ERROR';
 
 export const extractPostForm = (formData) => dispatch => {
     dispatch(extractPostFormRequest());
-    return fetch('http://localhost:8080/api/ads', {
+    return fetch('http://localhost:8080/api/posts', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'

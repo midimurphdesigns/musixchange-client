@@ -3,28 +3,28 @@ import { connect } from 'react-redux';
 import requiresLogin from '../../requires-login';
 
 import './userinfo.css';
-import { AdsServices } from '../../services/api';
+import { PostsServices } from '../../services/api';
 
 export class UserInfo extends React.Component {
     state = {
-        myAds: [],
+        myPosts: [],
     };
 
     componentDidMount() {
-        this.fetchAds();
+        this.fetchPosts();
     }
 
-    fetchAds = () => {
-        AdsServices.getMyAds()
-            .then(res => this.setState({ myAds: res }))
+    fetchPosts = () => {
+        PostsServices.getMyPosts()
+            .then(res => this.setState({ myPosts: res }))
             .catch(error => console.log(error));
     };
 
     handleDelete = id => {
         if (window.confirm('Are you sure?')) {
-            AdsServices.deleteAd(id).then(() => {
+            PostsServices.deletePost(id).then(() => {
                 this.setState({
-                    myAds: this.state.myAds.filter(el => el.id !== id),
+                    myPosts: this.state.myPosts.filter(el => el.id !== id),
                 });
             });
         }
@@ -33,15 +33,15 @@ export class UserInfo extends React.Component {
     render() {
         return (
             <div className="section-container">
-                <h1 className="page-title">Edit or Delete Your Ads</h1>
-                {this.state.myAds.map(element => (
-                    <div className="ads-container row" key={element.id}>
+                <h1 className="page-title">Edit or Delete Your Posts</h1>
+                {this.state.myPosts.map(element => (
+                    <div className="posts-container row" key={element.id}>
                         <div className="instrument-details">
                             <div className="col-4">
                                 <img
                                     src={element.image}
                                     alt="instrument for sale"
-                                    className="ad-image"
+                                    className="post-image"
                                 />
                             </div>
                             <div className="instrument-about col-4">

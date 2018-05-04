@@ -1,19 +1,19 @@
 import React from 'react';
-import './ads.css';
-import { AdsServices } from '../../services/api';
+import './posts.css';
+import { PostsServices } from '../../services/api';
 
-export default class Ads extends React.Component {
+export default class Posts extends React.Component {
   state = {
-    ads: [],
+    posts: [],
   };
 
   componentDidMount() {
-    this.fetchAds();
+    this.fetchPosts();
   }
 
-  fetchAds = () => {
-    AdsServices.getAds()
-      .then(res => this.setState({ ads: res }))
+  fetchPosts = () => {
+    PostsServices.getPosts()
+      .then(res => this.setState({ posts: res }))
       .catch(err => {
         console.log('====================================');
         console.log('error', err);
@@ -25,15 +25,15 @@ export default class Ads extends React.Component {
     return (
       <div className="section-container">
         <h1 className="page-title">Gear for Sale</h1>
-        {this.state.ads.map((element, index) => {
+        {this.state.posts.map((element, index) => {
           return (
-            <div className="ads-container row" key={String(index)}>
+            <div className="posts-container row" key={String(index)}>
               <div className="instrument-details">
                 <div className="pic-info col-4">
                   <img
                     src={element.image}
                     alt="instrument for sale"
-                    className="ad-image"
+                    className="post-image"
                   />
                 </div>
                 <div className="instrument-about col-4">
