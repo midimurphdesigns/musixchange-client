@@ -1,4 +1,4 @@
-import { loadAuthToken } from '../local-storage';
+import { loadAuthToken, clearAuthToken } from '../local-storage';
 import { API_BASE_URL } from '../config';
 
 let token;
@@ -29,8 +29,12 @@ export const Fetch = (path, method = 'GET', data = undefined) => {
     body: JSON.stringify(data),
     headers,
   }).then(res => {
+    console.log('res ----->', res);
     if (res.status >= 400) {
       throw new Error(res.statusText);
+    }
+    if (res.status === 401) {
+      clearAuthToken();
     }
     if (method !== 'DELETE') {
       return res.json();
@@ -47,6 +51,7 @@ export const AuthServices = {
 
   logout() {
     token = null;
+    clearAuthToken();
   },
 
 };
