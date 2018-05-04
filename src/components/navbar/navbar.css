@@ -5,20 +5,20 @@
 .nav {
     border-bottom: 3px solid #061826;
     text-align: right;
-    height: 70px;
-    line-height: 70px;
+    height: 90px;
+    line-height: 90px;
     background-color: whitesmoke;
 }
 
 .menu {
-    margin: 0 30px 0 0;
+    margin: 0 60px 0 0;
 }
 
 .menu a {
     clear: right;
     text-decoration: none;
     color: #061826;
-    margin: 0 10px;
+    margin: 0 30px;
     line-height: 70px;
     font-size: 22px;
     font-weight: 700;
@@ -32,7 +32,7 @@
 .logo-container, .logo-text-top a {
     display: flex;
     float: left;
-    font-size: 28px;
+    font-size: 36px;
     margin-left: 20px;
     font-weight: 800;
     text-shadow: 4px 4px 4px #aaa;
@@ -41,21 +41,20 @@
 }
 
 .logout {
-    margin-left: 40px;
-    margin-right: 20px;
     color: white;
-    padding: 5px;
+    padding: 15px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
+    margin: auto;
 }
 
 .hamburger {
     margin: 0 40px 0 0;
-    font-size: 26px;
-    line-height: 70px;
+    font-size: 36px;
+    line-height: 90px;
     display: none;
-    width: 26px;
+    width: 40px;
     float: right;
 }
 

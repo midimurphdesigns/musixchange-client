@@ -34,8 +34,8 @@ export class Navbar extends React.Component {
         <input type="checkbox" id="toggle" />
 
         <div className="menu">
-          <Link to="/about">About</Link>
           <Link to="/">For Sale</Link>
+          <Link to="/about">About</Link>
           {this.props.loggedIn && (
             <React.Fragment>
               <Link to="/post">Post</Link>

@@ -22,7 +22,7 @@
     border-bottom: 3px solid #061826;
     border-width: 80%;
     font-size: 28px;
-    width: 50%;
+    width: 100%;
     margin: auto;
     margin-bottom: 40px;
     padding: 30px;
@@ -43,4 +43,8 @@
     background-color: whitesmoke;
     border: 3px solid #061826;
     border-radius: 8px;
+}
+
+.sellers-container, .buyers-container, .upcoming-container {
+    margin-bottom: 60px;
 }
