@@ -44,6 +44,11 @@ export const AuthServices = {
   login(data) {
     return Fetch(`${this.basePath}/login`, 'POST', data);
   },
+
+  logout() {
+    token = null;
+  },
+
 };
 
 export const AdsServices = {
@@ -81,65 +86,3 @@ export const UserServices = {
     return Fetch(`${this.basePath}/me`);
   },
 };
-
-// const AuthServices = {
-//   tokenName: '@facebook/token',
-//   token: null,
-
-//   getToken() {
-//     if (this.token) {
-//       return this.token;
-//     }
-//     this.token = localStorage.getItem(this.tokenName);
-
-//     return this.token
-//   },
-
-//   saveToken(token) {
-//     this.token = token;
-//     return localStorage.setItem(this.tokenName, token);
-//   },
-
-//   login(email, password) {
-//     const path = 'login'
-
-//     return Fetch(path, 'POST', { email, password }).then(res => {
-//       if (res.token) {
-//         this.saveToken(token)
-//       }
-
-//       return res;
-//     })
-//   },
-// }
-
-// class App extends Component {
-//   state = { error: null, ads: [] }
-
-//   componentDidMount() {
-//     this._fetchAds()
-//   }
-
-//   _fetchAds = () => {
-//     AdsServices.getAds().then(res => this.setState({ ads: res })).catch(error => this.setState({ error }))
-//   }
-//   render() {
-//     if (this.state.error) {
-//       return (
-
-//       );
-//     }
-//   }
-
-//   export default App;
-
-//   export const signupUser = (userData) => (dispatch) => {
-//     dispatch({ type: 'SIGNUP_REQUEST' });
-
-//     AuthServices.signup(userData).then(res => {
-//       dispatch({ type: 'SIGNUP_SUCCESS', data: res.user })
-//     }).catch(error => ({
-//       dispatch({ type: 'SIGNUP_ERROR', error })
-//     }))
-//   }
-// }

@@ -29,18 +29,20 @@
     font-weight: 900px;
 }
 
-.logo-container, .logo-text-top {
+.logo-container, .logo-text-top a {
     display: flex;
     float: left;
     font-size: 28px;
     margin-left: 20px;
-    font-weight: 700;
+    font-weight: 800;
     text-shadow: 4px 4px 4px #aaa;
     color: #061826;
+    text-decoration: none;
 }
 
 .logout {
-    /* color: #19647e; */
+    margin-left: 40px;
+    margin-right: 20px;
     color: white;
     padding: 5px;
     border-radius: 8px;
@@ -77,13 +79,12 @@
         display: block;
         border-bottom: 1px solid #061826;
         margin: 0;
-        z-index: 100;
     }
 
     #toggle:checked + .menu {
         display: flex;
         flex-direction: column;
-        background-color: purple;
-
+        background-color: whitesmoke;
+        position: sticky;
     }
 }

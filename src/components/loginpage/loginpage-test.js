@@ -2,10 +2,10 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import Loginform from './loginform';
+import LoginPage from './loginpage';
 
-describe('<Loginform />', () => {
+describe('<LoginPage />', () => {
     it('Renders without crashing', () => {
-        shallow(<Loginform />);
+        shallow(<LoginPage />);
     });
 });

@@ -5,14 +5,11 @@
   padding: 20px;
 }
 
-.current-ads {
-  background-color: whitesmoke;
-  border: 3px solid #061826;
-  border-radius: 8px;
-  padding: 20px;
-  margin: auto;
-  margin-top: 2%;
-  width: 75%;
+.section-title {
+  border-bottom: 3px solid #061826;
+  font-size: 30px;
+  color: #061826;
+  text-shadow: 4px 4px 4px #aaa;
 }
 
 .ping-notifications {
@@ -23,4 +20,47 @@
   margin: auto;
   margin-top: 2%;
   width: 75%;
+}
+
+.ads-container {
+  display: block;
+  font-size: 20px;
+  border: 3px solid #061826;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: whitesmoke;
+}
+
+.ad-image {
+  display: block;
+  border: 3px solid #061826;
+  border-radius: 8px;
+  width: 100%;
+  padding: 0px;
+  margin: auto;
+}
+
+.instrument-details {
+  display: block;
+}
+
+.instrument-about {
+  display: block;
+  padding: 20px;
+  margin: auto;
+  font-size: 20px;
+}
+
+.instrument-label {
+  display: block;
+
+}
+
+.edit-delete {
+  font-size: 20px;
+  /* margin: auto; */
+  margin-bottom: 20px;
+  margin-top: 30px;
+  cursor: pointer;
 }

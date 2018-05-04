@@ -14,7 +14,7 @@ const errorMsg = {
 
 export class Postform extends React.Component {
   _handleSubmit = (values, bag) => {
-    AdsServices.createAds(values).then(() => {
+  AdsServices.createAds(values).then(() => {
       this.props.redirect()
     })
   };
@@ -34,12 +34,6 @@ export class Postform extends React.Component {
             description: Yup.string()
               .min(15)
               .required("Don't forget to enter a description of your gear"),
-            instrumentType: Yup.string().required(
-              "Don't forget to enter the type of your gear",
-            ),
-            instrumentName: Yup.string().required(
-              "Don't forget to enter the make and model of your gear",
-            ),
             condition: Yup.string().required(
               "Don't forget to enter the condition of your gear",
             ),
@@ -51,8 +45,6 @@ export class Postform extends React.Component {
             image: '',
             title: '',
             description: '',
-            instrumentType: '',
-            instrumentName: '',
             condition: '',
             price: '',
           }}
@@ -108,36 +100,6 @@ export class Postform extends React.Component {
                   {errors.description &&
                     touched.description && (
                       <div className="error-messages">{errors.description}</div>
-                    )}
-                  <input
-                    className="single-input"
-                    onChange={handleChange}
-                    name="instrumentType"
-                    label="Type of gear"
-                    placeholder="Type of gear"
-                    onBlur={handleBlur}
-                  // error={errors.instrumentType && touched.instrumentType}
-                  />
-                  {errors.instrumentType &&
-                    touched.instrumentType && (
-                      <div className="error-messages">
-                        {errors.instrumentType}
-                      </div>
-                    )}
-                  <input
-                    className="single-input"
-                    onChange={handleChange}
-                    name="instrumentName"
-                    label="Make and model"
-                    placeholder="Make and model"
-                    onBlur={handleBlur}
-                  // error={errors.instrumentName && touched.instrumentName}
-                  />
-                  {errors.instrumentName &&
-                    touched.instrumentName && (
-                      <div className="error-messages">
-                        {errors.instrumentName}
-                      </div>
                     )}
                   <input
                     className="single-input"

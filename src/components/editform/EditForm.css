@@ -1,4 +1,16 @@
+.input-label {
+  color: #061826;
+  font-size: 16px;
+}
 
+.input-container {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  font-size: 18px;
+}
 
 
 /* button hover effect */

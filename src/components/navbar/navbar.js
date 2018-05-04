@@ -5,11 +5,13 @@ import { connect } from 'react-redux';
 import './navbar.css';
 import { clearAuth } from '../../actions/auth';
 import { clearAuthToken } from '../../local-storage';
+import { AuthServices } from '../../services/api'
 
 export class Navbar extends React.Component {
   logOut() {
     this.props.dispatch(clearAuth());
     clearAuthToken();
+    AuthServices.logout();
   }
 
   render() {
@@ -25,7 +27,7 @@ export class Navbar extends React.Component {
     return (
       <div className="nav">
         <div className="logo-container">
-          <label className="logo-text-top">Musixchange</label>
+          <label className="logo-text-top"><Link to="/">Musixchange</Link></label>
         </div>
 
         <label htmlFor="toggle" className="hamburger">&#9776;</label>
@@ -33,14 +35,18 @@ export class Navbar extends React.Component {
 
         <div className="menu">
           <Link to="/">For Sale</Link>
-          <Link to="/post">Post</Link>
+          {this.props.loggedIn && (
+            <React.Fragment>
+              <Link to="/post">Post</Link>
+              <Link to="/account">Account</Link>
+            </React.Fragment>
+          )}
           {!this.props.loggedIn && (
             <React.Fragment>
               <Link to="/signup">Signup</Link>
               <Link to="/login">Login</Link>
             </React.Fragment>
           )}
-          <Link to="/account">Account</Link>
           {logOutButton}
         </div>
       </div>
