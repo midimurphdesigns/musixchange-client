@@ -29,7 +29,6 @@ export const Fetch = (path, method = 'GET', data = undefined) => {
     body: JSON.stringify(data),
     headers,
   }).then(res => {
-    console.log('res ----->', res);
     if (res.status >= 400) {
       throw new Error(res.statusText);
     }

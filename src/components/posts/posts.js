@@ -3,6 +3,7 @@ import './posts.css';
 import { PostsServices } from '../../services/api';
 
 export default class Posts extends React.Component {
+
   state = {
     posts: [],
   };
@@ -13,7 +14,10 @@ export default class Posts extends React.Component {
 
   fetchPosts = () => {
     PostsServices.getPosts()
-      .then(res => this.setState({ posts: res }))
+      .then(res => {
+        console.log(res)
+        this.setState({ posts: res })
+      })
       .catch(err => {
         console.log('====================================');
         console.log('error', err);
@@ -22,6 +26,7 @@ export default class Posts extends React.Component {
   };
 
   render() {
+    console.log(this.state.posts);
     return (
       <div className="section-container">
         <h1 className="page-title">Gear for Sale</h1>
@@ -51,12 +56,6 @@ export default class Posts extends React.Component {
                   <label className="user-info">{element.author.username}</label>
                   <label className="info-label">Email:</label>
                   <label className="user-info">{element.author.email}</label>
-                  {/* <button
-                    className="ping-seller-button blue push_button"
-                    type="button"
-                  >
-                    Ping the Seller
-                  </button> */}
                 </div>
               </div>
             </div>
