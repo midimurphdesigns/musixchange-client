@@ -4,25 +4,59 @@ import Yup from 'yup';
 import { connect } from 'react-redux';
 
 import './postform.css';
-import { extractPostForm } from '../../actions/postActions';
-import { PostsServices } from '../../services/api'
+import { PostsServices } from '../../services/api';
+import Input from '../../commons/Input';
 
-const errorMsg = {
-  password: 'Invalid password',
-  username: 'Invalid username',
-};
+const FORMS = [
+  {
+    name: 'image',
+    placeholder: 'Image url',
+  },
+  {
+    name: 'title',
+    placeholder: 'Title',
+  },
+  {
+    name: 'description',
+    placeholder: 'Description',
+  },
+  {
+    name: 'condition',
+    placeholder: 'Condition',
+  },
+  {
+    name: 'price',
+    placeholder: 'Price',
+    type: 'number',
+  },
+];
 
 export class Postform extends React.Component {
+  state = {
+    error: false,
+  };
+
   _handleSubmit = (values, bag) => {
-  PostsServices.createPosts(values).then(() => {
-      this.props.redirect()
-    })
+    PostsServices.createPosts(values)
+      .then(() => {
+        this.props.redirect();
+      })
+      .catch(err => {
+        bag.setSubmitting(false);
+        this.setState({ error: true });
+      });
   };
 
   render() {
+    if (this.state.error) {
+      return (
+        <div>
+          <h1>Something went wrong</h1>
+        </div>
+      );
+    }
     return (
       <div className="form-container">
-
         <Formik
           validationSchema={Yup.object().shape({
             image: Yup.string()
@@ -58,82 +92,26 @@ export class Postform extends React.Component {
             handleBlur,
             isValid,
           }) => (
-              <div className="input-container">
-                <h1>Post an ad for your gear</h1>
-                <form onSubmit={handleSubmit}>
-                  <input
+            <div className="input-container">
+              <h1>Post an ad for your gear</h1>
+              <form onSubmit={handleSubmit}>
+                {FORMS.map(el => (
+                  <Input
+                    {...el}
+                    key={el.name}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
                     className="single-input"
-                    onChange={handleChange}
-                    // error={errors.image && touched.image}
-                    name="image"
-                    label="Image"
-                    placeholder="Image URL"
-                    onBlur={handleBlur}
+                    error={errors[el.name]}
+                    touched={touched[el.name]}
                   />
-                  {errors.image &&
-                    touched.image && (
-                      <div className="error-messages">{errors.image}</div>
-                    )}
-                  <input
-                    className="single-input"
-                    onChange={handleChange}
-                    // error={errors.title && touched.title}
-                    name="title"
-                    label="title"
-                    placeholder="Title for ad"
-                    onBlur={handleBlur}
-                  />
-                  {errors.title &&
-                    touched.title && (
-                      <div className="error-messages">{errors.title}</div>
-                    )}
-                  <input
-                    className="single-input"
-                    onChange={handleChange}
-                    // fluid
-                    name="description"
-                    label="description"
-                    placeholder="Description of gear"
-                    onBlur={handleBlur}
-                  // error={errors.description && touched.description}
-                  />
-                  {errors.description &&
-                    touched.description && (
-                      <div className="error-messages">{errors.description}</div>
-                    )}
-                  <input
-                    className="single-input"
-                    onChange={handleChange}
-                    name="condition"
-                    label="Condition"
-                    placeholder="Condition"
-                    onBlur={handleBlur}
-                  // error={errors.condition && touched.condition}
-                  />
-                  {errors.condition &&
-                    touched.condition && (
-                      <div className="error-messages">{errors.condition}</div>
-                    )}
-                  <input
-                    className="single-input"
-                    onChange={handleChange}
-                    name="price"
-                    label="Price"
-                    placeholder="Price"
-                    onBlur={handleBlur}
-                  // error={errors.price && touched.price}
-                  />
-                  {errors.price &&
-                    touched.price && (
-                      <div className="error-messages">{errors.price}</div>
-                    )}
-                  <button
-                    className="submit blue push_button"
-                    disabled={!isValid}
-                  >Submit</button>
-                </form>
-              </div>
-            )}
+                ))}
+                <button className="submit blue push_button" disabled={!isValid}>
+                  Submit
+                </button>
+              </form>
+            </div>
+          )}
         />
       </div>
     );

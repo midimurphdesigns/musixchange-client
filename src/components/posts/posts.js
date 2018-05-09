@@ -1,67 +1,48 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { RiseLoader } from 'react-spinners';
+
 import './posts.css';
 import { PostsServices } from '../../services/api';
+import PostItem from './PostItem';
 
-export default class Posts extends React.Component {
+import { fetchPosts } from '../../actions/postActions';
 
-  state = {
-    posts: [],
-  };
-
+class Posts extends React.Component {
   componentDidMount() {
-    this.fetchPosts();
+    this.props.dispatch(fetchPosts());
   }
 
-  fetchPosts = () => {
-    PostsServices.getPosts()
-      .then(res => {
-        console.log(res)
-        this.setState({ posts: res })
-      })
-      .catch(err => {
-        console.log('====================================');
-        console.log('error', err);
-        console.log('====================================');
-      });
-  };
-
   render() {
-    console.log(this.state.posts);
+    const { loading, error, posts } = this.props.postsState;
+    if (loading) {
+      return (
+        <div className="loading-wrapper">
+          <RiseLoader />
+        </div>
+      );
+    }
+
+    if (error) {
+      return (
+        <div>
+          <h1>something wrong: {error.message}</h1>
+        </div>
+      );
+    }
     return (
       <div className="section-container">
         <h1 className="page-title">Gear for Sale</h1>
-        {this.state.posts.map((element, index) => {
-          return (
-            <div className="posts-container row" key={String(index)}>
-              <div className="instrument-details">
-                <div className="pic-info col-4">
-                  <img
-                    src={element.image}
-                    alt="instrument for sale"
-                    className="post-image"
-                  />
-                </div>
-                <div className="instrument-about col-4">
-                  <label className="info-label">Title:</label>
-                  <label className="instrument-label">{element.title}</label>
-                  <label className="info-label">Description:</label>
-                  <label className="instrument-label">{element.description}</label>
-                  <label className="info-label">Condition:</label>
-                  <label className="instrument-label">{element.condition}</label>
-                </div>
-                <div className="instrument-about col-4">
-                  <label className="info-label">Price:</label>
-                  <label className="user-info">{element.price}</label>
-                  <label className="info-label">Seller:</label>
-                  <label className="user-info">{element.author.username}</label>
-                  <label className="info-label">Email:</label>
-                  <label className="user-info">{element.author.email}</label>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        {posts.map(element => (
+          <PostItem {...element} key={String(element.id)} />
+        ))}
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  postsState: state.post,
+});
+
+export default connect(mapStateToProps)(Posts);

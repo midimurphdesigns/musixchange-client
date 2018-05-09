@@ -48,11 +48,14 @@ export const AuthServices = {
     return Fetch(`${this.basePath}/login`, 'POST', data);
   },
 
+  signup(data) {
+    return Fetch('users', 'POST', data);
+  },
+
   logout() {
     token = null;
     clearAuthToken();
   },
-
 };
 
 export const PostsServices = {
