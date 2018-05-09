@@ -9,19 +9,17 @@ import Accountpage from '../accountpage/accountpage';
 import Loginpage from '../loginpage/loginpage';
 import Signuppage from '../signuppage/signuppage';
 import Navbar from '../navbar/navbar';
-import About from '../about/about'
 import Posts from '../posts/posts';
 import Footer from '../footer/footer';
-import Aboutpage from '../aboutpage/aboutpage'
+import Aboutpage from '../aboutpage/aboutpage';
 
 export class Frontpage extends React.Component {
-
   render() {
     return (
       <React.Fragment>
         <div className="page-container">
           <Navbar />
-          <div className="mainSection">            
+          <div className="mainSection">
             <Route exact path="/" component={Posts} />
             <Route exact path="/about" component={Aboutpage} />
             <Route exact path="/post" component={Postpage} />
