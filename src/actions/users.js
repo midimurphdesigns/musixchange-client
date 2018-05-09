@@ -5,6 +5,7 @@ import { normalizeResponseErrors } from './utils';
 import { UserServices } from '../services/api';
 
 export const registerUser = user => dispatch => {
+  console.log(user);
   return fetch(`${API_BASE_URL}/users`, {
     method: 'POST',
     headers: {
@@ -19,9 +20,7 @@ export const registerUser = user => dispatch => {
       if (reason === 'ValidationError') {
         // Convert ValidationErrors into SubmissionErrors for Redux Form
         return Promise.reject(
-          new SubmissionError({
-            [location]: message,
-          }),
+          
         );
       }
     });
