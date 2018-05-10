@@ -35,7 +35,6 @@ export class Navbar extends React.Component {
 
         <div className="menu">
           <Link to="/">For Sale</Link>
-          <Link to="/about">About</Link>
           {this.props.loggedIn && (
             <React.Fragment>
               <Link to="/post">Post</Link>

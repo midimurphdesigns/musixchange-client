@@ -11,27 +11,45 @@ import Signuppage from '../signuppage/signuppage';
 import Navbar from '../navbar/navbar';
 import Posts from '../posts/posts';
 import Footer from '../footer/footer';
-import Aboutpage from '../aboutpage/aboutpage';
+import Onboard from '../onboard/onboard';
 
 export class Frontpage extends React.Component {
+
+  state = {
+    showAds: false
+  }
+
+  _goToApp = () => {
+    this.setState({
+      showAds: true,
+    })
+
+    localStorage.setItem('showAds', 'true');
+  }
+
   render() {
-    return (
-      <React.Fragment>
-        <div className="page-container">
-          <Navbar />
-          <div className="mainSection">
-            <Route exact path="/" component={Posts} />
-            <Route exact path="/about" component={Aboutpage} />
-            <Route exact path="/post" component={Postpage} />
-            <Route exact path="/account" component={Accountpage} />
-            <Route exact path="/login" component={Loginpage} />
-            <Route exact path="/signup" component={Signuppage} />
-            <Route exact path="/posts/:id/edit" component={EditPage} />
-            <Footer />
+    if (this.state.showAds) {
+      return (
+        <React.Fragment>
+          <div className="page-container">
+            <Navbar />
+            <div className="mainSection">
+              <Route exact path="/" component={Posts} />
+              <Route exact path="/post" component={Postpage} />
+              <Route exact path="/account" component={Accountpage} />
+              <Route exact path="/login" component={Loginpage} />
+              <Route exact path="/signup" component={Signuppage} />
+              <Route exact path="/posts/:id/edit" component={EditPage} />
+              <Footer />
+            </div>
           </div>
-        </div>
-      </React.Fragment>
-    );
+        </React.Fragment>
+      );
+    }
+
+    return (
+      <Route exact path="/" component={Onboard} />
+    )
   }
 }
 

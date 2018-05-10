@@ -2,10 +2,10 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import About from './about';
+import Onboard from './onboard';
 
-describe('<About />', () => {
+describe('<Onboard />', () => {
     it('Renders without crashing', () => {
-        shallow(<About />);
+        shallow(<Onboard />);
     });
 });
