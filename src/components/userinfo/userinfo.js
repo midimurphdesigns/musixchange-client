@@ -33,7 +33,7 @@ export class UserInfo extends React.Component {
     render() {
         return (
             <div className="section-container">
-                <h1 className="page-title">Edit or Delete Your Posts</h1>
+                <h1 className="page-title">Manage Your Posts</h1>
                 {this.state.myPosts.map(element => (
                     <div className="posts-container row" key={element.id}>
                         <div className="instrument-details">

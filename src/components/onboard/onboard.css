@@ -1,0 +1,117 @@
+.onboard-page-container {
+  background-image: url('../../images/concert7.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 425px;
+}
+
+.row-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-evenly;
+  color: #121f21;
+  font-size: 18px;
+  padding: 30px;
+  margin: 20px;
+  margin-bottom: 50px;
+  border: 3px solid #eef5f6;
+  border-radius: 8px;
+  background-color: #69a5b0;
+  box-shadow: 6px 6px 10px #eef5f6;
+}
+
+.about-steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+  padding: 3px;
+}
+
+.icon {
+  font-size: 125px;
+  text-align: center;
+  text-shadow: .75px .75px .75px #eef5f6;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-around;
+  border: 3px solid #eef5f6;
+  border-radius: 8px;
+  background-color: #69a5b0;
+  box-shadow: 6px 6px 10px #eef5f6;
+}
+
+.onboard-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  cursor: pointer;
+  margin: 40px;
+  width: 20%;
+  font-size: 24px;
+  color: whitesmoke;
+}
+
+.title {
+  color: #121f21;
+  text-shadow: 4px 4px 4px #eef5f6;
+  font-size: 100px;
+  letter-spacing: 5px;
+  font-weight: 700;
+  border-bottom: 1px dashed whitesmoke;
+  width: 90%;
+  margin: auto;
+}
+
+.slogan {
+  color: #091011;
+  text-shadow: 2px 2px 2px #eef5f6;
+  font-size: 32px;
+  font-weight: 500;
+  padding: 10px;
+  border-bottom: 1px dashed whitesmoke;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 850px) {
+
+  .about-container, .buttons-container {
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 30px;
+    flex-direction: column;
+  }
+
+  .row-wrapper {
+    flex-direction: column;
+  }
+
+  .onboard-buttons {
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+
+  .title {
+    font-size: 48px;
+    margin: auto;
+  }
+
+  .slogan {
+    font-size: 32px;
+    margin: auto;
+  }
+}

@@ -15,20 +15,8 @@ import Onboard from '../onboard/onboard';
 
 export class Frontpage extends React.Component {
 
-  state = {
-    showAds: false
-  }
-
-  _goToApp = () => {
-    this.setState({
-      showAds: true,
-    })
-
-    localStorage.setItem('showAds', 'true');
-  }
-
   render() {
-    if (this.state.showAds) {
+    if (this.props.showPosts ) {
       return (
         <React.Fragment>
           <div className="page-container">
@@ -57,6 +45,7 @@ const mapStateToProps = state => ({
   hasAuthToken: state.auth.authToken !== null,
   loggedIn: state.auth.currentUser !== null,
   warning: state.auth.warning,
+  showPosts: state.post.showPosts,
 });
 
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking

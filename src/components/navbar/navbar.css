@@ -30,11 +30,13 @@
 }
 
 .logo-container, .logo-text-top a {
+    font-family: 'Chango', sans-serif;
     display: flex;
     float: left;
-    font-size: 36px;
+    letter-spacing: 3px;
+    font-size: 50px;
     margin-left: 20px;
-    font-weight: 800;
+    font-weight: 550;
     text-shadow: 4px 4px 4px #aaa;
     color: #061826;
     text-decoration: none;

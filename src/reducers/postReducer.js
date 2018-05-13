@@ -8,6 +8,7 @@ const initialState = {
   loading: false,
   error: null,
   posts: [],
+  showPosts: false
 };
 
 export function postReducer(state = initialState, action) {
@@ -31,28 +32,12 @@ export function postReducer(state = initialState, action) {
         loading: false,
         error: action.error,
       };
+    case 'SHOW_POSTS_SUCCESS':
+      return {
+        ...state,
+        showPosts: true,
+      };
     default:
       return state;
   }
-
-  //   if (action.type === EXTRACT_POST_FORM_REQUEST) {
-  //     return {
-  //       ...state,
-  //       loading: true,
-  //     };
-  //   } else if (action.type === EXTRACT_POST_FORM_SUCCESS) {
-  //     return {
-  //       ...state,
-  //       loading: false,
-  //       error: null,
-  //       posts: action.data,
-  //     };
-  //   } else if (action.type === EXTRACT_POST_FORM_ERROR) {
-  //     return {
-  //       ...state,
-  //       loading: false,
-  //       error: action.error,
-  //     };
-  //   }
-  //   return state;
 }

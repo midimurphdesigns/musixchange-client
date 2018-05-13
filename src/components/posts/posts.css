@@ -12,7 +12,8 @@
 
 .page-title {
     color: whitesmoke;
-    font-size: 40px;
+    font-size: 80px;
+    padding: 0px;
 }
 
 .posts-container {
@@ -22,7 +23,6 @@
     border-radius: 8px;
     margin: auto;
     margin-bottom: 20px;
-    padding: 20px;
     background-color: whitesmoke;
 }
 

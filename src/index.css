@@ -4,7 +4,15 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  font-size: 18px;
   margin: 0;
+  background-color: #8ab9c1;
+  color: #121f21;
+}
+
+h1, h2, h3 {
+  font-family: 'Changa', sans-serif;
+  color: #121f21;
 }
 
 .row {

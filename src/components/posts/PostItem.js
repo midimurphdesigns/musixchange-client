@@ -24,7 +24,7 @@ export default function PostItem({
         </div>
         <div className="instrument-about col-4">
           <label className="info-label">Price:</label>
-          <label className="user-info">${price}</label>
+          <label className="user-info">{price}</label>
           <label className="info-label">Seller:</label>
           <label className="user-info">{author.username}</label>
           <label className="info-label">Email:</label>
