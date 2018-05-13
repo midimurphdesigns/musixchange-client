@@ -61,7 +61,6 @@ export class UserInfo extends React.Component {
                         </div>
                     </div>
                 ))}
-                {/* <section className="ping-notifications">Ping notifications go here</section> */}
             </div>
         );
     }
