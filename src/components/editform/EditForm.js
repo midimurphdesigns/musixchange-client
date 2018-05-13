@@ -4,13 +4,7 @@ import Yup from 'yup';
 import { connect } from 'react-redux';
 
 import './EditForm.css';
-import { extractPostForm } from '../../actions/postActions';
 import { PostsServices } from '../../services/api';
-
-const errorMsg = {
-  password: 'Invalid password',
-  username: 'Invalid username',
-};
 
 export class EditForm extends React.Component {
   _handleSubmit = (values, bag) => {

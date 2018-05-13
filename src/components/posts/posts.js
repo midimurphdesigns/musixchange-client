@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { RiseLoader } from 'react-spinners';
 
 import './posts.css';
-import { PostsServices } from '../../services/api';
 import PostItem from './PostItem';
 
 import { fetchPosts } from '../../actions/postActions';

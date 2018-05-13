@@ -106,12 +106,10 @@
   }
 
   .title {
-    font-size: 48px;
-    margin: auto;
+    font-size: 40px;
   }
 
   .slogan {
-    font-size: 32px;
-    margin: auto;
+    font-size: 26px;
   }
 }

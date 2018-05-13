@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './postpage.css';
-import { fetchProtectedData } from '../../actions/protected-data';
 import Postform from '../postform/postform';
 import requiresLogin from '../../requires-login';
 

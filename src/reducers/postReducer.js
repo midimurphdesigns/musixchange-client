@@ -1,9 +1,3 @@
-import {
-  EXTRACT_POST_FORM_REQUEST,
-  EXTRACT_POST_FORM_SUCCESS,
-  EXTRACT_POST_FORM_ERROR,
-} from '../actions/postActions';
-
 const initialState = {
   loading: false,
   error: null,

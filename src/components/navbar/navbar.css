@@ -82,6 +82,10 @@
         margin: 0;
     }
 
+    .logo-text-top a {
+        font-size: 30px;
+    }
+
     #toggle:checked + .menu {
         display: flex;
         flex-direction: column;

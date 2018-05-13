@@ -4,7 +4,6 @@ import Yup from 'yup';
 import { connect } from 'react-redux';
 
 import './signupform.css';
-import { registerUser } from '../../actions/users';
 import { storeAuthInfo } from '../../actions/auth';
 import { AuthServices } from '../../services/api';
 

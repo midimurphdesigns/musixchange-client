@@ -19,7 +19,7 @@ class Onboard extends React.Component {
         <div className="row-wrapper row">
           <div className="about-container col-6">
             <div className="icon">
-              <i class="fa fa-headphones"></i>
+              <i className="fa fa-headphones"></i>
             </div>
             <div>
               <h2 className="about-steps">Key Features:</h2>
@@ -32,7 +32,7 @@ class Onboard extends React.Component {
 
           <div className="about-container col-6">
             <div className="icon">
-              <i class="fa fa-forward"></i>
+              <i className="fa fa-forward"></i>
             </div>
             <div>
               <h2 className="about-steps">Upcoming app features:</h2>
@@ -48,7 +48,7 @@ class Onboard extends React.Component {
         <div className="row-wrapper row">
           <div className="about-container col-6">
             <div className="icon">
-              <i class="fa fa-microphone"></i>
+              <i className="fa fa-microphone"></i>
             </div>
             <div>
               <h2 className="about-steps">Seller Instructions:</h2>
@@ -61,7 +61,7 @@ class Onboard extends React.Component {
 
           <div className="about-container col-6">
             <div className="icon">
-              <i class="fa fa-music"></i>
+              <i className="fa fa-music"></i>
             </div>
             <div>
               <h2 className="about-steps">Buying Instructions:</h2>

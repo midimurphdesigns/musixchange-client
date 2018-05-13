@@ -1,7 +1,3 @@
-import { SubmissionError } from 'redux-form';
-
-import { API_BASE_URL } from '../config';
-import { normalizeResponseErrors } from './utils';
 import { UserServices, AuthServices } from '../services/api';
 import { storeAuthInfo } from './auth';
 
