@@ -54,7 +54,7 @@ export class UserInfo extends React.Component {
                             </div>
                             <div className="seller-details col-4">
                                 <label className="info-label">Price:</label>
-                                <label className="instrument-label">{element.price}</label>
+                                <label className="instrument-label">${element.price}</label>
                                 <button className="edit-delete blue push_button" onClick={() => this.props.goToEdit(element.id)}>Edit</button>
                                 <button className="edit-delete blue push_button" onClick={() => this.handleDelete(element.id)}>Delete</button>
                             </div>
