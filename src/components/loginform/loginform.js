@@ -55,6 +55,8 @@ export class Loginform extends React.Component {
           }) => (
               <div className="input-container">
                 <h1>Login</h1>
+                <h3>username: demo</h3>
+                <h3>password: password123</h3>
                 <form onSubmit={handleSubmit}>
                   <input
                     className="single-input"
