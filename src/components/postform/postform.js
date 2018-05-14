@@ -92,26 +92,26 @@ export class Postform extends React.Component {
             handleBlur,
             isValid,
           }) => (
-            <div className="input-container">
-              <h1>Post an ad for your gear</h1>
-              <form onSubmit={handleSubmit}>
-                {FORMS.map(el => (
-                  <Input
-                    {...el}
-                    key={el.name}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    className="single-input"
-                    error={errors[el.name]}
-                    touched={touched[el.name]}
-                  />
-                ))}
-                <button className="submit blue push_button" disabled={!isValid}>
-                  Submit
+              <div className="input-container">
+                <h1>Post an ad for your gear</h1>
+                <form onSubmit={handleSubmit}>
+                  {FORMS.map(el => (
+                    <Input
+                      {...el}
+                      key={el.name}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                      className="single-input"
+                      error={errors[el.name]}
+                      touched={touched[el.name]}
+                    />
+                  ))}
+                  <button className="submit blue push_button" disabled={!isValid}>
+                    Submit
                 </button>
-              </form>
-            </div>
-          )}
+                </form>
+              </div>
+            )}
         />
       </div>
     );
