@@ -35,7 +35,7 @@ export class SignupForm extends React.Component {
               .min(6)
               .required("Don't forget to enter a valid password"),
             confirmPassword: Yup.string()
-              .oneOf([Yup.ref('password'), null])
+              .oneOf([Yup.ref('password'), null], 'Passwords must match')
               .required("Don't forget to confirm your password"),
           })}
           initialValues={{
