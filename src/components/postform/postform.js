@@ -93,7 +93,7 @@ export class Postform extends React.Component {
             isValid,
           }) => (
               <div className="input-container">
-                <h1>Post an ad for your gear</h1>
+                <h1 className='post-form-title'>Post an ad for your gear</h1>
                 <form onSubmit={handleSubmit}>
                   {FORMS.map(el => (
                     <Input

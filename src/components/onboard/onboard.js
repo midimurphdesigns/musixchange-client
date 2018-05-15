@@ -16,6 +16,31 @@ class Onboard extends React.Component {
           </div>
         </div>
 
+        <div className="row">
+          <div className="buttons-container col-12">
+            <button
+              className="onboard-buttons push_button blue col-4"
+              onClick={() => {
+                this.props.dispatch(showPosts())
+                this.props.history.push('/login')
+              }}
+            >Login</button>
+            <button
+              className="onboard-buttons push_button blue col-4"
+              onClick={() => {
+                this.props.dispatch(showPosts())
+                this.props.history.push('/signup')
+              }}
+            >Signup</button>
+            <button
+              className="onboard-buttons push_button blue col-4"
+              onClick={() => {
+                this.props.dispatch(showPosts())
+              }}
+            >See Ads</button>
+          </div>
+        </div>
+
         <div className="row-wrapper row">
           <div className="about-container col-6">
             <div className="icon">
@@ -69,31 +94,6 @@ class Onboard extends React.Component {
               <span className="about-steps">2) Find email and username of seller</span>
               <span className="about-steps">3) Discuss details of sale via email</span>
             </div>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="buttons-container col-12">
-            <button
-              className="onboard-buttons push_button blue col-4"
-              onClick={() => {
-                this.props.dispatch(showPosts())
-                this.props.history.push('/login')
-              }}
-            >Login</button>
-            <button
-              className="onboard-buttons push_button blue col-4"
-              onClick={() => {
-                this.props.dispatch(showPosts())
-                this.props.history.push('/signup')
-              }}
-            >Signup</button>
-            <button
-              className="onboard-buttons push_button blue col-4"
-              onClick={() => {
-                this.props.dispatch(showPosts())
-              }}
-            >Go To App</button>
           </div>
         </div>
 

@@ -2,6 +2,7 @@
   background-image: url('../../images/concert7.jpg');
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
   background-size: cover;
   padding-bottom: 425px;
 }
@@ -44,10 +45,11 @@
 .buttons-container {
   display: flex;
   justify-content: space-around;
-  border: 3px solid #eef5f6;
-  border-radius: 8px;
-  background-color: #69a5b0;
-  box-shadow: 6px 6px 10px #eef5f6;
+  margin: auto;
+  /* border: 3px solid #eef5f6; */
+  /* border-radius: 8px; */
+  /* background-color: #69a5b0; */
+  /* box-shadow: 6px 6px 10px #eef5f6; */
 }
 
 .onboard-buttons {
@@ -68,7 +70,7 @@
   letter-spacing: 5px;
   font-weight: 700;
   border-bottom: 1px dashed whitesmoke;
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
@@ -100,16 +102,17 @@
 
   .onboard-buttons {
     justify-content: center;
+    height: 115px;
     width: 50%;
     margin: auto;
     margin-bottom: 30px;
   }
 
   .title {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   .slogan {
-    font-size: 26px;
+    font-size: 24px;
   }
 }

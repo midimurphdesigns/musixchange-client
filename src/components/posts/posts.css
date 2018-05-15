@@ -141,3 +141,9 @@
     bottom: -5px;
     content: "";
 }
+
+@media only screen and (max-width: 850px) {
+    .page-title {
+        font-size: 34px;
+    }
+}

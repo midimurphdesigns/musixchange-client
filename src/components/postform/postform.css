@@ -71,3 +71,9 @@
   bottom: -5px;
   content: "";
 }
+
+@media only screen and (max-width: 850px) {
+  .post-form-title {
+      font-size: 26px;
+  }
+}
