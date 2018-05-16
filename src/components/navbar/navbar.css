@@ -30,13 +30,13 @@
 }
 
 .logo-container, .logo-text-top a {
-    font-family: 'Chango', sans-serif;
+    font-family: 'Changa', sans-serif;
     display: flex;
     float: left;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     font-size: 50px;
     margin-left: 20px;
-    font-weight: 550;
+    font-weight: 600;
     text-shadow: 4px 4px 4px #aaa;
     color: #061826;
     text-decoration: none;
@@ -83,7 +83,7 @@
     }
 
     .logo-text-top a {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .logout {

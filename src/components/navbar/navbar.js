@@ -37,8 +37,8 @@ export class Navbar extends React.Component {
           <Link to="/">For Sale</Link>
           {this.props.loggedIn && (
             <React.Fragment>
-              <Link to="/post">Post</Link>
-              <Link to="/account">Account</Link>
+              <Link to="/post" for="toggle">Post</Link>
+              <Link to="/account" htmlFor="toggle">Account</Link>
             </React.Fragment>
           )}
           {!this.props.loggedIn && (
