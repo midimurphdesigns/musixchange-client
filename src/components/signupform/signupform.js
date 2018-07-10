@@ -54,67 +54,67 @@ export class SignupForm extends React.Component {
             handleBlur,
             isValid,
           }) => (
-            <div className="input-container">
-              <h1>Signup</h1>
-              <form onSubmit={handleSubmit}>
-                <input
-                  className="single-input"
-                  onChange={handleChange}
-                  name="email"
-                  label="Email"
-                  placeholder="Email here..."
-                  onBlur={handleBlur}
-                />
-                {errors.email &&
-                  touched.email && (
-                    <div className="error-messages">{errors.email}</div>
-                  )}
-                <input
-                  className="single-input"
-                  onChange={handleChange}
-                  name="username"
-                  label="Username"
-                  placeholder="Username here..."
-                  onBlur={handleBlur}
-                />
-                {errors.username &&
-                  touched.username && (
-                    <div className="error-messages">{errors.username}</div>
-                  )}
-                <input
-                  className="single-input"
-                  onChange={handleChange}
-                  type="password"
-                  name="password"
-                  label="Password"
-                  placeholder="Password here"
-                  onBlur={handleBlur}
-                />
-                {errors.password &&
-                  touched.password && (
-                    <div className="error-messages">{errors.password}</div>
-                  )}
-                <input
-                  type="password"
-                  className="single-input"
-                  onChange={handleChange}
-                  name="confirmPassword"
-                  label="Confirm Password"
-                  placeholder="Confirm Password"
-                  onBlur={handleBlur}
-                />
-                {errors.confirmPassword &&
-                  touched.confirmPassword && (
-                    <div className="error-messages">
-                      {errors.confirmPassword}
-                    </div>
-                  )}
-                <button className="submit blue push_button" disabled={!isValid}>
-                  Submit
+              <div className="input-container">
+                <h1>Signup</h1>
+                <form onSubmit={handleSubmit}>
+                  <input
+                    className="single-input"
+                    onChange={handleChange}
+                    name="email"
+                    label="Email"
+                    placeholder="Email here..."
+                    onBlur={handleBlur}
+                  />
+                  {errors.email &&
+                    touched.email && (
+                      <div className="error-messages">{errors.email}</div>
+                    )}
+                  <input
+                    className="single-input"
+                    onChange={handleChange}
+                    name="username"
+                    label="Username"
+                    placeholder="Username here..."
+                    onBlur={handleBlur}
+                  />
+                  {errors.username &&
+                    touched.username && (
+                      <div className="error-messages">{errors.username}</div>
+                    )}
+                  <input
+                    className="single-input"
+                    onChange={handleChange}
+                    type="password"
+                    name="password"
+                    label="Password"
+                    placeholder="Password here"
+                    onBlur={handleBlur}
+                  />
+                  {errors.password &&
+                    touched.password && (
+                      <div className="error-messages">{errors.password}</div>
+                    )}
+                  <input
+                    type="password"
+                    className="single-input"
+                    onChange={handleChange}
+                    name="confirmPassword"
+                    label="Confirm Password"
+                    placeholder="Confirm Password"
+                    onBlur={handleBlur}
+                  />
+                  {errors.confirmPassword &&
+                    touched.confirmPassword && (
+                      <div className="error-messages">
+                        {errors.confirmPassword}
+                      </div>
+                    )}
+                  <button className="submit blue push_button" disabled={!isValid}>
+                    Submit
                 </button>
-              </form>
-            </div>
-          )}
+                </form>
+              </div>
+            )}
         />
       </div>
     );
